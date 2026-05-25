@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Velvet Noir | Moonlight Aroma</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-container-highest": "#e4e2e2",
+          "on-background": "#1b1c1c",
+          "primary-container": "#1c1b1b",
+          "surface-container-low": "#f5f3f3",
+          "secondary-fixed-dim": "#e9c176",
+          "outline-variant": "#c4c7c7",
+          "on-primary-container": "#858383",
+          "on-error": "#ffffff",
+          "secondary-fixed": "#ffdea5",
+          "primary-fixed-dim": "#c8c6c5",
+          "on-secondary-fixed-variant": "#5d4201",
+          "on-secondary-fixed": "#261900",
+          "surface-bright": "#fbf9f8",
+          "inverse-surface": "#303031",
+          "surface": "#fbf9f8",
+          "on-surface-variant": "#444748",
+          "on-primary": "#ffffff",
+          "primary-fixed": "#e5e2e1",
+          "tertiary-container": "#1b1c19",
+          "surface-container": "#efeded",
+          "on-secondary-container": "#785a1a",
+          "surface-container-high": "#e9e8e7",
+          "primary": "#000000",
+          "on-primary-fixed": "#1c1b1b",
+          "surface-dim": "#dbdad9",
+          "surface-variant": "#e4e2e2",
+          "secondary-container": "#fed488",
+          "surface-container-lowest": "#ffffff",
+          "secondary": "#775a19",
+          "on-secondary": "#ffffff",
+          "background": "#fbf9f8",
+          "inverse-primary": "#c8c6c5",
+          "outline": "#747878",
+          "on-surface": "#1b1c1c",
+          "tertiary": "#000000"
+        },
+        borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+        spacing: { "unit": "8px", "margin-mobile": "20px", "gutter": "24px", "margin-desktop": "64px" },
+        fontFamily: {
+          "body-md": ["Manrope"], "label-caps": ["Manrope"], "body-lg": ["Manrope"],
+          "headline-md": ["Bodoni Moda"], "headline-lg-mobile": ["Bodoni Moda"],
+          "display-lg": ["Bodoni Moda"], "headline-lg": ["Bodoni Moda"]
+        },
+        fontSize: {
+          "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+          "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+          "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+          "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+          "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "600"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+  body { background-color: #fbf9f8; color: #1b1c1c; }
+  .editorial-shadow { box-shadow: 20px 20px 60px #d9d7d6, -20px -20px 60px #ffffff; }
+</style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md overflow-x-hidden">
+
+<!-- Nav -->
+<header class="w-full top-0 sticky z-50 bg-background border-b border-on-background/10 transition-all duration-300" id="site-header">
+  <nav class="flex justify-between items-center w-full px-margin-desktop py-gutter max-w-[1440px] mx-auto">
+    <div class="flex items-center gap-10">
+      <a class="font-headline-md text-headline-md font-medium text-primary" href="index.html">Moonlight Aroma</a>
+      <div class="hidden md:flex gap-8 items-center">
+        <a class="font-body-md text-body-md uppercase tracking-widest text-primary font-bold border-b-2 border-primary pb-1" href="collections.html">Fragrances</a>
+        <a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="scent-stories.html">Scent Stories</a>
+        <a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Heritage</a>
+      </div>
+    </div>
+    <div class="flex items-center gap-6">
+      <button class="hover:opacity-70 transition-opacity flex items-center">
+        <span class="material-symbols-outlined text-primary">search</span>
+      </button>
+      <button class="hover:opacity-70 transition-opacity flex items-center">
+        <span class="material-symbols-outlined text-primary">shopping_bag</span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main class="flex-grow">
+  <!-- Product Hero -->
+  <section class="max-w-[1440px] mx-auto px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+    <!-- Breadcrumb -->
+    <div class="col-span-12 mb-4">
+      <nav class="flex gap-2 font-label-caps text-label-caps text-on-surface-variant uppercase">
+        <a class="hover:text-primary transition-colors" href="collections.html">Fragrances</a>
+        <span>/</span>
+        <a class="hover:text-primary transition-colors" href="collections.html">Collections</a>
+        <span>/</span>
+        <span class="text-primary">Velvet Noir</span>
+      </nav>
+    </div>
+
+    <!-- Image Gallery -->
+    <div class="col-span-12 md:col-span-7 grid grid-cols-6 gap-4">
+      <div class="col-span-6 bg-surface-container-low overflow-hidden">
+        <img class="w-full h-[700px] object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdHUdXR2J91DWmhmii2DXQ6I22Q6IbpK2cnl_3uM9qlooFbssHNUCsXC_rsMc6M9eQMQpyp4ndanzO5tAbPOPw_0dTKjmpujE5P3AQ7Mg7Qj0799qwdwbNXKmdWmHRSyWLXPGt0lWsSdRC-gBMx6CbCg30BKV10Wgp95vBYZZWk-mdu3faKDfK8kjOokNiCPuvTXQpteFQEuVlwoS9hKm4X0vdbEsJFkeB53GVbSLO0XstU2Fyxu5LQaIQajzy_Pty6l2_0upK6bdu" alt="Velvet Noir main product shot"/>
+      </div>
+      <div class="col-span-3 bg-surface-container-low h-[400px] overflow-hidden">
+        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOu8-BNxs02oAgc8w4XUOwIgsq15CgN_74y8qKbc_GUcvev3thD0qtJZXEV-0zf2mk_sKEwgCbTWqdbCxApgGBuNJ1VVoq2JNUjTZu7CKBktQe4X0KKuD6od_akJ-yXa88tEkxQhH0C27zr9ObNHWe2EqoAlbDMnrqwEQAXe92ZHaUiZkOM54h8LBWZOqJarvSTmXXrCShictWmWlexnGaQyNVuCwRI8J27f9Yn1OPn3i_1faTzXyxkcprSUk2FSrc-K-LWXeLsRnM" alt="Velvet texture detail"/>
+      </div>
+      <div class="col-span-3 bg-surface-container-low h-[400px] overflow-hidden">
+        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSh3MOKTtMkJZjoOzFMTAwBxHp2MDiJ1I1jFE8EbEBGey1ozByYNizXmwlDTkitcMSyZtd4mV0RDjicror5UlROtC4qyV5ZjMBUCYL2ZDQ2PY5LFvk54q-wMZ57tfTryO5OJbTTwIaThOkMLj7qSuCfdK6cAvvbPaRUhec8tC7tFaBIexPGe3Co54hJKcOYHe91jn8kFfb6ew2U7b1ZLTp7ERUw8d3rFInq-JZAn06E1EHSAxZJ1J_8WoX2U03PbOmyHgjq3H62uqo" alt="Ingredients: rose and oud"/>
+      </div>
+    </div>
+
+    <!-- Product Info -->
+    <div class="col-span-12 md:col-span-5 sticky top-32 flex flex-col gap-8">
+      <div>
+        <span class="font-label-caps text-label-caps text-secondary tracking-[0.2em] uppercase mb-2 block">Extrait de Parfum · 100ml</span>
+        <h1 class="font-display-lg text-headline-lg md:text-display-lg text-primary leading-tight mb-4">Velvet Noir</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+          A nocturnal odyssey captured in a bottle. Velvet Noir opens with a sharp, cold spice that descends into a heart of smoked oud and midnight rose, leaving a trail of black amber and vanilla that lingers until morning.
+        </p>
+      </div>
+
+      <div class="flex items-baseline gap-4 py-6 border-y border-on-background/10">
+        <span class="font-headline-md text-headline-md text-primary">$285.00</span>
+        <span class="font-label-caps text-label-caps text-on-surface-variant">100ML / 3.4 FL.OZ · Free shipping over $150</span>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <div class="flex justify-between items-center group border-b border-on-background/10 pb-4">
+          <span class="font-label-caps text-label-caps uppercase text-primary">Size</span>
+          <div class="flex gap-4">
+            <button class="font-label-caps text-label-caps border border-primary px-4 py-1 text-primary">100ML</button>
+            <button class="font-label-caps text-label-caps border border-on-background/20 px-4 py-1 text-on-surface-variant hover:border-primary hover:text-primary transition-colors">50ML</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-4 mt-4">
+        <button id="add-to-bag" class="w-full bg-primary text-white py-6 font-label-caps text-label-caps uppercase tracking-[0.2em] hover:bg-on-surface-variant transition-colors active:scale-[0.98]">
+          Add to Bag
+        </button>
+        <button class="w-full border border-primary text-primary py-6 font-label-caps text-label-caps uppercase tracking-[0.2em] hover:bg-primary hover:text-white transition-all">
+          Add to Wishlist
+        </button>
+      </div>
+
+      <div class="mt-4 flex flex-col gap-6">
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary">local_shipping</span>
+          <div>
+            <p class="font-label-caps text-label-caps uppercase text-primary">Complimentary Shipping</p>
+            <p class="text-xs text-on-surface-variant">On all orders above $150. Worldwide delivery in 3–5 business days.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary">eco</span>
+          <div>
+            <p class="font-label-caps text-label-caps uppercase text-primary">Sustainable Packaging</p>
+            <p class="text-xs text-on-surface-variant">Recyclable glass and FSC-certified paper. Carbon-neutral shipping available.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary">swap_horiz</span>
+          <div>
+            <p class="font-label-caps text-label-caps uppercase text-primary">30-Day Returns</p>
+            <p class="text-xs text-on-surface-variant">Unopened items accepted within 30 days of receipt.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scent Composition -->
+  <section class="bg-surface-container-low py-24 px-margin-desktop">
+    <div class="max-w-[1440px] mx-auto">
+      <div class="flex flex-col items-center mb-16 text-center">
+        <span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase mb-4">The Olfactory Pyramid</span>
+        <h2 class="font-headline-lg text-headline-lg text-primary">Scent Composition</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-on-background/10">
+        <div class="bg-surface-container-low p-12 flex flex-col items-center text-center group hover:bg-background transition-colors duration-500">
+          <div class="w-16 h-16 rounded-full border border-secondary flex items-center justify-center mb-8 group-hover:bg-secondary group-hover:text-white transition-all">
+            <span class="font-label-caps text-label-caps">01</span>
+          </div>
+          <h3 class="font-label-caps text-label-caps uppercase tracking-widest text-primary mb-4">Top Notes</h3>
+          <p class="font-headline-md text-[24px] mb-4 italic">The Awakening</p>
+          <p class="font-body-md text-on-surface-variant">Pink Pepper, Cold Saffron, and White Bergamot — an immediate, electric introduction that lasts 10–15 minutes.</p>
+          <div class="mt-8 flex gap-2 flex-wrap justify-center">
+            <span class="px-3 py-1 border border-secondary/30 text-[10px] font-bold uppercase tracking-tighter text-secondary">Vibrant</span>
+            <span class="px-3 py-1 border border-secondary/30 text-[10px] font-bold uppercase tracking-tighter text-secondary">Spicy</span>
+          </div>
+        </div>
+        <div class="bg-surface-container-low p-12 flex flex-col items-center text-center group hover:bg-background transition-colors duration-500">
+          <div class="w-16 h-16 rounded-full border border-secondary flex items-center justify-center mb-8 group-hover:bg-secondary group-hover:text-white transition-all">
+            <span class="font-label-caps text-label-caps">02</span>
+          </div>
+          <h3 class="font-label-caps text-label-caps uppercase tracking-widest text-primary mb-4">Heart Notes</h3>
+          <p class="font-headline-md text-[24px] mb-4 italic">The Soul</p>
+          <p class="font-body-md text-on-surface-variant">Midnight Rose and Smoked Oud — a deep, floral-woody core that defines the fragrance's character over 2–4 hours.</p>
+          <div class="mt-8 flex gap-2 flex-wrap justify-center">
+            <span class="px-3 py-1 border border-secondary/30 text-[10px] font-bold uppercase tracking-tighter text-secondary">Opulent</span>
+            <span class="px-3 py-1 border border-secondary/30 text-[10px] font-bold uppercase tracking-tighter text-secondary">Floral</span>
+          </div>
+        </div>
+        <div class="bg-surface-container-low p-12 flex flex-col items-center text-center group hover:bg-background transition-colors duration-500">
+          <div class="w-16 h-16 rounded-full border border-secondary flex items-center justify-center mb-8 group-hover:bg-secondary group-hover:text-white transition-all">
+            <span class="font-label-caps text-label-caps">03</span>
+          </div>
+          <h3 class="font-label-caps text-label-caps uppercase tracking-widest text-primary mb-4">Base Notes</h3>
+          <p class="font-headline-md text-[24px] mb-4 italic">The Resonance</p>
+          <p class="font-body-md text-on-surface-variant">Black Amber, Vanilla Bourbon, and Patchouli — a lingering, addictive trail that lasts 8–12 hours on skin.</p>
+          <div class="mt-8 flex gap-2 flex-wrap justify-center">
+            <span class="px-3 py-1 border border-secondary/30 text-[10px] font-bold uppercase tracking-tighter text-secondary">Warm</span>
+            <span class="px-3 py-1 border border-secondary/30 text-[10px] font-bold uppercase tracking-tighter text-secondary">Lasting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Ritual -->
+  <section class="max-w-[1440px] mx-auto px-margin-desktop py-24 flex flex-col md:flex-row gap-16 items-center">
+    <div class="w-full md:w-1/2">
+      <img class="w-full h-[600px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLsBRShoW60FPcHB7I9aMGQK6wsFEI7XgT3c_Xb_2PIiVlKwfEKgytPbW425HAKBv8EWyZbwHjiyKqk3dfnvCvXra98GeNx4TShcaJQuV5-hTH4zEJaqfWBtNkZLIDN8QrML09B6frklU3A2u_LVfhD6sBycyOGbJO_ukD9wv2LD1WEDwYpC8XaAFtUXjPyBOeVV8FXYGOifdgAajB-vC4Hp2AEvmhSl8CDk5ohoifPIW9FJtOjB3Sod0OPh-pg5IMb3SLp3OyZS9W" alt="Application ritual"/>
+    </div>
+    <div class="w-full md:w-1/2 flex flex-col gap-8">
+      <span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase">Art of Application</span>
+      <h2 class="font-headline-lg text-headline-lg text-primary">The Ritual</h2>
+      <div class="space-y-8">
+        <div class="flex gap-6 items-start">
+          <span class="font-display-lg text-headline-md opacity-20 italic">01</span>
+          <div class="pt-2">
+            <h4 class="font-label-caps text-label-caps uppercase text-primary mb-2">Preparation</h4>
+            <p class="font-body-md text-on-surface-variant">Apply to moisturised skin for best longevity. Target pulse points — wrists, neck, and behind the ears — where body heat slowly releases the fragrance over 12 hours.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <span class="font-display-lg text-headline-md opacity-20 italic">02</span>
+          <div class="pt-2">
+            <h4 class="font-label-caps text-label-caps uppercase text-primary mb-2">Distance</h4>
+            <p class="font-body-md text-on-surface-variant">Hold the bottle six inches from skin and spray in a wide arc, allowing the Extrait to mist evenly rather than concentrate in one spot.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <span class="font-display-lg text-headline-md opacity-20 italic">03</span>
+          <div class="pt-2">
+            <h4 class="font-label-caps text-label-caps uppercase text-primary mb-2">Patience</h4>
+            <p class="font-body-md text-on-surface-variant">Allow the scent to settle for 15 minutes. Avoid rubbing wrists together — this breaks down the delicate top-note molecules and disrupts the intended progression.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- You May Also Like -->
+  <section class="max-w-[1440px] mx-auto px-margin-desktop py-24 border-t border-on-background/10">
+    <div class="flex justify-between items-end mb-12">
+      <div>
+        <span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase mb-4 block">You may also enjoy</span>
+        <h2 class="font-headline-lg text-headline-lg text-primary">Complementary Fragrances</h2>
+      </div>
+      <a href="collections.html" class="font-label-caps text-label-caps border-b border-primary pb-1 hover:opacity-70 transition-opacity">View All</a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="group cursor-pointer">
+        <div class="relative overflow-hidden mb-6 aspect-[3/4]">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDugFkup3HUj1Dl7GImZfyjW_kouNtjstUVxzV_SOjU-eT5O7bEdrr5oA-k7IcLWRFmrofV3kzRvhzjXDbf5VhDTbsR968Z-DmPihvpvQsyyaoMH3Vyrsaw9L0lmVgZSo7ZlxGo8bvnfxkACv-Xj_wqBJGExxMM0FxCNOiA-uCD9skdjZUlpWXdYvcGzSpe0gWw-BiF4bRZxinszWgrCTyzBEEhRhMCENKV8nh24_Uxevc8gQdZID7lV7wUd9N5S0EyUsjIsQqDV8EV" alt="Morning Dew"/>
+        </div>
+        <p class="font-label-caps text-[10px] uppercase text-on-surface-variant tracking-widest mb-1">Floral · Citrus</p>
+        <h3 class="font-headline-md text-[20px] text-primary group-hover:underline underline-offset-4">Morning Dew</h3>
+        <p class="font-body-md text-on-surface-variant mt-2">$210.00</p>
+      </div>
+      <div class="group cursor-pointer">
+        <div class="relative overflow-hidden mb-6 aspect-[3/4]">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBrGU49z45j_tuIuQVdVjUdQCAmyWKY4vs3NxR2volOCcmmDzHXwmFlcM44EMKWkuf0KkMNblgdmyDXuIfx7F6hrdT_ObvEFRg8XTasT7k51DfMBIta1t95r_mWeOmwN7PGz1IFmIK8-HblJWVxBm_MWDNHhti_UtNSaD0Dh6_r0dWCkpCiuGY7FiPahlyqfXYwsQgshTycEwVxvE-V9RMHO36Q5sNVU5smYqxfXiSW1I5EUk7NLPtCpKOLFwajNv-EUnwzMJHJAVl" alt="Gilded Amber"/>
+        </div>
+        <p class="font-label-caps text-[10px] uppercase text-on-surface-variant tracking-widest mb-1">Amber · Woody</p>
+        <h3 class="font-headline-md text-[20px] text-primary group-hover:underline underline-offset-4">Gilded Amber</h3>
+        <p class="font-body-md text-on-surface-variant mt-2">$245.00</p>
+      </div>
+      <div class="group cursor-pointer">
+        <div class="relative overflow-hidden mb-6 aspect-[3/4]">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnDY_8MH6C7yBOf7cDxiCbyX0_L17-6MRd9bzZYEhZJ2YPYrf90HYWqExUflyyCYAA7E9LxRxl_zzZhXNal6bJFV83mTJg_KuJo3oqlGFlvZMXBXjtgKNqRvVwYBp-N74VyU3b3FuSOOTpBO6sqC11EHmo_lT5ahz202WIC1dK_Yrucozw6ylhkMZ3l8p4I8c1rhsFFPquXaRvfPjJaJcaiO5eoaDBNB949wfuvYp07C_CcNGrL-ExhOmsQa_TR" alt="Silver Mist"/>
+        </div>
+        <p class="font-label-caps text-[10px] uppercase text-on-surface-variant tracking-widest mb-1">Ozone · Mineral</p>
+        <h3 class="font-headline-md text-[20px] text-primary group-hover:underline underline-offset-4">Silver Mist</h3>
+        <p class="font-body-md text-on-surface-variant mt-2">$195.00</p>
+      </div>
+      <div class="group cursor-pointer">
+        <div class="relative overflow-hidden mb-6 aspect-[3/4]">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0hgV9HGoIqlMeihKD43BYTHstKNNTJdolhk9B_qfWdw4Z8lALarO8XsDTondQHWVVWU85igBPH73hAuf60PTNZTkAsYasmJvW1Na_Zb32zlm4ql0mpzsprlC6O69h2prZHieNo3IfKURGMpopebWcuSwk1VQ2nFtDx8Lbp6-hCfvFUdSbW5zuiRfPlnEdtNECudWz5YlFKnzkSAS3yys06DKMT-WcKodAltlX5H1uvDbZhfgKABHdixr8o05NBTtyMWEdPr4tKLlR" alt="Verdant Soul"/>
+        </div>
+        <p class="font-label-caps text-[10px] uppercase text-on-surface-variant tracking-widest mb-1">Green · Earthy</p>
+        <h3 class="font-headline-md text-[20px] text-primary group-hover:underline underline-offset-4">Verdant Soul</h3>
+        <p class="font-body-md text-on-surface-variant mt-2">$225.00</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container-low border-t border-on-background/20 flex flex-col items-center justify-center px-margin-desktop py-16 gap-unit">
+  <span class="font-headline-lg text-headline-lg text-primary mb-8">Moonlight Aroma</span>
+  <div class="flex flex-wrap justify-center gap-10 mb-12">
+    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#">Sustainability</a>
+    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#">Shipping & Returns</a>
+    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#">Privacy Policy</a>
+    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#">Contact</a>
+  </div>
+  <div class="flex gap-6 mb-12">
+    <a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+  </div>
+  <p class="font-label-caps text-[10px] text-on-surface-variant opacity-60">© 2024 Moonlight Aroma. All rights reserved.</p>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('site-header');
+    if (window.scrollY > 50) header.classList.add('py-4','editorial-shadow');
+    else header.classList.remove('py-4','editorial-shadow');
+  });
+
+  document.getElementById('add-to-bag').addEventListener('click', function() {
+    const orig = this.innerText;
+    this.innerText = 'Added to Bag ✓';
+    this.classList.replace('bg-primary','bg-secondary');
+    setTimeout(() => {
+      this.innerText = orig;
+      this.classList.replace('bg-secondary','bg-primary');
+    }, 2000);
+  });
+</script>
+</body>
+</html>

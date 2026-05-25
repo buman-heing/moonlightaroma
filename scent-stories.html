@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scent Stories | Moonlight Aroma</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-container-highest": "#e4e2e2",
+          "on-background": "#1b1c1c",
+          "surface-container-low": "#f5f3f3",
+          "outline-variant": "#c4c7c7",
+          "on-primary": "#ffffff",
+          "surface-bright": "#fbf9f8",
+          "surface": "#fbf9f8",
+          "on-surface-variant": "#444748",
+          "primary-fixed": "#e5e2e1",
+          "surface-container": "#efeded",
+          "surface-container-high": "#e9e8e7",
+          "primary": "#000000",
+          "surface-dim": "#dbdad9",
+          "surface-variant": "#e4e2e2",
+          "secondary-container": "#fed488",
+          "surface-container-lowest": "#ffffff",
+          "secondary": "#775a19",
+          "background": "#fbf9f8",
+          "outline": "#747878",
+          "on-surface": "#1b1c1c",
+          "tertiary": "#000000"
+        },
+        spacing: { "unit": "8px", "margin-mobile": "20px", "gutter": "24px", "margin-desktop": "64px" },
+        fontFamily: {
+          "body-md": ["Manrope"], "label-caps": ["Manrope"], "body-lg": ["Manrope"],
+          "headline-md": ["Bodoni Moda"], "headline-lg-mobile": ["Bodoni Moda"],
+          "display-lg": ["Bodoni Moda"], "headline-lg": ["Bodoni Moda"]
+        },
+        fontSize: {
+          "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+          "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+          "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+          "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+          "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "600"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+  body { background-color: #fbf9f8; color: #1b1c1c; -webkit-font-smoothing: antialiased; }
+  .editorial-rule { height: 0.5px; background-color: rgba(19,19,19,0.2); width: 100%; }
+  .text-justified { text-align: justify; text-justify: inter-word; }
+</style>
+</head>
+<body class="text-on-background font-body-md overflow-x-hidden">
+
+<!-- Nav -->
+<nav class="w-full top-0 sticky bg-background border-b border-on-background/10 z-50">
+  <div class="flex justify-between items-center w-full px-margin-desktop py-gutter max-w-[1440px] mx-auto">
+    <div class="flex-1 flex gap-8 items-center">
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md uppercase tracking-widest" href="collections.html">Fragrances</a>
+      <a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md uppercase tracking-widest" href="scent-stories.html">Scent Stories</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md uppercase tracking-widest" href="#">Heritage</a>
+    </div>
+    <a class="font-headline-md text-headline-md font-medium text-primary" href="index.html">Moonlight Aroma</a>
+    <div class="flex-1 flex justify-end gap-6 items-center">
+      <button class="hover:opacity-70 transition-opacity"><span class="material-symbols-outlined text-primary">search</span></button>
+      <button class="hover:opacity-70 transition-opacity"><span class="material-symbols-outlined text-primary">shopping_bag</span></button>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-[1440px] mx-auto px-margin-desktop pt-16 pb-32">
+
+  <!-- Editorial Hero -->
+  <header class="mb-24">
+    <div class="grid grid-cols-12 gap-gutter items-end">
+      <div class="col-span-12 md:col-span-7">
+        <p class="font-label-caps text-label-caps text-secondary mb-4 uppercase">Vol. IV — The Nocturnal Chronicles</p>
+        <h1 class="font-display-lg text-display-lg mb-8 leading-tight">The Art of the <br/><span class="italic font-normal">Midnight Bloom</span></h1>
+      </div>
+      <div class="col-span-12 md:col-span-5 pb-4">
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md italic">
+          Exploring the hidden chemistry of flowers that only reveal their true character under the silver gaze of the moon — and how this shapes the fragrances we catalog.
+        </p>
+      </div>
+    </div>
+    <div class="mt-12 w-full aspect-[21/9] overflow-hidden bg-surface-container">
+      <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2000ms]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZLz5i8yhIW2SIolFQ7IkUrk1uwz7vi_odfqKZzTc_JAXKEPylFPSVFClSzIvFn4H8xQjUgVAk9fXTAFb2i0IAGbO6RikXC4_iYkNIUw2YTRkJxxkRHQQVW4ntre0pWN6Df7mjYy2wAcffc1bWvhdxiR6rmKDpBjhRzWEpz2FavArxpMuUWz5V_QSe0kdPsAcc6l-uBV1ZtZx3e1DV91TGz2zoDCq0NURLrZ2iUBxHU3FdPsPBi6wKrDMtdOA4YgzdsyOjqsPThp29" alt="Midnight bloom — editorial photography"/>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <section class="grid grid-cols-12 gap-gutter mb-32">
+    <!-- Sidebar -->
+    <aside class="col-span-12 md:col-span-3 border-t border-on-background/10 pt-8">
+      <div class="flex flex-col gap-6">
+        <div>
+          <h4 class="font-label-caps text-label-caps mb-2">WRITTEN BY</h4>
+          <p class="font-body-md text-body-md">Elena Vancore</p>
+        </div>
+        <div>
+          <h4 class="font-label-caps text-label-caps mb-2">PHOTOGRAPHY</h4>
+          <p class="font-body-md text-body-md">Julian Moss</p>
+        </div>
+        <div>
+          <h4 class="font-label-caps text-label-caps mb-2">READ TIME</h4>
+          <p class="font-body-md text-body-md">8 Minutes</p>
+        </div>
+        <div>
+          <h4 class="font-label-caps text-label-caps mb-2">CATEGORY</h4>
+          <p class="font-body-md text-body-md">Ingredient Stories</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Article -->
+    <article class="col-span-12 md:col-span-6 flex flex-col gap-8">
+      <p class="font-body-lg text-body-lg leading-relaxed text-justified first-letter:text-7xl first-letter:font-headline-lg first-letter:float-left first-letter:mr-4 first-letter:mt-2">
+        Nature possesses a secret rhythm — a temporal alchemy invisible to the casual observer. While the world sleeps, certain species of flora undergo a metamorphosis. Night-blooming cereus, moonflowers, and nocturnal jasmines don't merely open; they exhale. This breath forms the foundation of some of the rarest fragrances in our catalog: scents captured in the liminal space between midnight and dawn.
+      </p>
+      <p class="font-body-lg text-body-lg leading-relaxed text-justified">
+        The chemistry of these blooms is governed by the absence of solar heat. Without the sun to accelerate evaporation, volatile compounds remain concentrated within the heart of each petal, developing a complexity that is impossible to replicate in daylight. It is a cooler, more metallic sweetness — a scent that feels like velvet pulled across cold glass.
+      </p>
+
+      <blockquote class="my-8 py-12 border-y border-on-background/10">
+        <p class="font-headline-md text-headline-md italic text-center px-12">
+          "To capture the midnight bloom is to bottle the silence of the forest at 3:00 AM."
+        </p>
+      </blockquote>
+
+      <p class="font-body-lg text-body-lg leading-relaxed text-justified">
+        The perfumers behind our most acclaimed nocturnal fragrances travel to high plateaus during the lunar peak, using traditional enfleurage techniques to gently extract each essence without harsh solvents. This labor is as much a ritual as it is a science, ensuring that the ethereal quality of the fragrance remains untainted by industrial haste — and that what arrives at your door is the truest possible expression of the night.
+      </p>
+      <p class="font-body-lg text-body-lg leading-relaxed text-justified">
+        When you browse Moonlight Aroma's catalog, each fragrance featuring nocturnal botanicals includes a detailed ingredient provenance card — tracing every bloom from harvest location to bottle. We believe knowing where your scent comes from is as important as knowing how it smells.
+      </p>
+    </article>
+
+    <!-- Sticky Sidebar Product -->
+    <div class="col-span-12 md:col-span-3">
+      <div class="sticky top-32 flex flex-col gap-12">
+        <div class="p-6 bg-surface-container-low border border-outline/10">
+          <img class="w-full aspect-square object-cover mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgUI8BfYIDBhNpPSMrCuHrXj_owY_QFxePevWo8xl5wkf05NTjdU-j8YOkqJs-galzFJickL8yl8DykfvjdMxISTu0clU41GAatjef3CW-TbrGfxi4eFEKj7jUnALC2fPaxxpEmWoV04azryoMDshos6pmJJl6fB5wknNkTezq9ar9jPw4Q9IjQ45MnBhQsHO2IfyvkgeYh0xGmaIJ3Zi-TW37nFat7tqfgcXdzi06lJJzLO5i7bdgty5A8RzqmgC49YAlR3CSGKBU" alt="Featured fragrance from catalog"/>
+          <h5 class="font-label-caps text-label-caps mb-1">FEATURED IN THIS STORY</h5>
+          <p class="font-headline-md text-sm mb-1">Velvet Noir</p>
+          <p class="font-label-caps text-label-caps text-secondary mb-4">$285.00</p>
+          <a href="product.html" class="block w-full bg-primary text-on-primary font-label-caps text-label-caps py-3 hover:opacity-90 transition-opacity text-center uppercase tracking-widest">View in Catalog</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scent Anatomy Feature -->
+  <section class="bg-surface-container-high py-24 px-0 -mx-margin-desktop mb-32">
+    <div class="max-w-[1440px] mx-auto px-margin-desktop">
+      <div class="text-center mb-16">
+        <h2 class="font-display-lg text-headline-lg mb-6">The Anatomy of Shadow</h2>
+        <div class="editorial-rule max-w-xs mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+        <div class="group text-center space-y-6">
+          <div class="aspect-square flex items-center justify-center border border-outline-variant group-hover:border-secondary transition-colors duration-500">
+            <span class="font-display-lg text-display-lg italic opacity-10 group-hover:opacity-100 transition-opacity duration-700 text-secondary">01</span>
+          </div>
+          <h3 class="font-label-caps text-label-caps uppercase tracking-widest">Base: Black Amber</h3>
+          <p class="font-body-md text-on-surface-variant px-4">The architectural foundation. Dense, resinous, and lingering — the signature that stays on your skin long after the night has ended.</p>
+        </div>
+        <div class="group text-center space-y-6 md:translate-y-12">
+          <div class="aspect-square flex items-center justify-center border border-outline-variant group-hover:border-secondary transition-colors duration-500">
+            <span class="font-display-lg text-display-lg italic opacity-10 group-hover:opacity-100 transition-opacity duration-700 text-secondary">02</span>
+          </div>
+          <h3 class="font-label-caps text-label-caps uppercase tracking-widest">Heart: Midnight Jasmine</h3>
+          <p class="font-body-md text-on-surface-variant px-4">The emotional center. Sweet yet dangerous — harvested at 2AM when olfactory concentration is at its absolute peak.</p>
+        </div>
+        <div class="group text-center space-y-6">
+          <div class="aspect-square flex items-center justify-center border border-outline-variant group-hover:border-secondary transition-colors duration-500">
+            <span class="font-display-lg text-display-lg italic opacity-10 group-hover:opacity-100 transition-opacity duration-700 text-secondary">03</span>
+          </div>
+          <h3 class="font-label-caps text-label-caps uppercase tracking-widest">Top: Silver Mist</h3>
+          <p class="font-body-md text-on-surface-variant px-4">The first impression. Cold, metallic, and sharp — a prelude to the warmth and depth that follows in the heart and base.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pull Quote -->
+  <section class="py-16 mb-32 relative overflow-hidden">
+    <div class="absolute right-0 top-0 opacity-5 -translate-y-1/2">
+      <span class="font-display-lg text-[300px] italic select-none text-on-background">Scent</span>
+    </div>
+    <div class="w-full max-w-3xl mx-auto text-center">
+      <blockquote class="font-display-lg text-headline-lg italic leading-tight mb-12">
+        "A perfume is like a piece of clothing, a message, a way of presenting oneself — a costume that changes according to the person who wears it."
+      </blockquote>
+      <div class="font-label-caps text-label-caps uppercase text-secondary tracking-[0.3em]">Paloma Picasso</div>
+    </div>
+  </section>
+
+  <!-- Further Stories -->
+  <section class="border-t border-on-background/20 pt-16">
+    <div class="flex justify-between items-end mb-16">
+      <div>
+        <h2 class="font-headline-lg text-headline-lg">Further Narratives</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant">More stories from the Moonlight Aroma catalog archive.</p>
+      </div>
+      <a class="font-label-caps text-label-caps border-b border-primary pb-1 hover:opacity-70 transition-opacity" href="#">View All Stories</a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+      <div class="group cursor-pointer">
+        <div class="aspect-[4/5] overflow-hidden bg-surface-container mb-6">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQT3s10YS83PdWlx9nv33-Bl-VlVT7zRkvL9Y3WxkOUXFdcmpgQJY0tga3_DcFs6IMjDSlFzBGZyaN9RZQSzEmrhydKBATsN79RjrAaMSAWER0CDfn4zGq-x4nuX3gufL9wUWkDdF5YCZm0AAqErXM7ShWZehsE387N2z0Xx_5Fwm0lg3yV4Sr7uH_vFfGwwtFOojrYexq8vyCNiKeWKRoVpgb183wpYKfmF_5MYfR6_05_Ix5IyemRdBO36y568WZRpKjgJ_67e9-" alt="Story: The Architecture of Scent"/>
+        </div>
+        <p class="font-label-caps text-label-caps text-secondary mb-2">INGREDIENT SOURCING</p>
+        <h3 class="font-headline-md text-headline-md mb-3 leading-tight group-hover:italic transition-all">Sourcing Oud: A Journey to Laos</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">How our catalog partners travel to Southeast Asian forests to ethically source agarwood for the finest oud fragrances.</p>
+      </div>
+      <div class="group cursor-pointer">
+        <div class="aspect-[4/5] overflow-hidden bg-surface-container mb-6">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsG9wFoy4WkFCG0uNbyFocXUJoyUnMmLbEL7Xc0qy-fLCNhuok40hYUVVO1t5uT1uEcTGSWo0-glmf2r9hvsl3654SQ67YhcVqyhY5sLnjaRgnQaaw-Y6YxJDDQHZwe5mqSf4OGsPUmY_WZqnIwixN4qlv5kB79XIGbmTaCODXS0Htw1PL512UnBlG3V31yL3pWWQxw9jfJYOexM6AcoKUb5swjdNC-BqrH61KfIleu3dNkoCm-PKGsny_ErwOnFMYyDD-53hir4FT" alt="Story: Seasonal Distillations"/>
+        </div>
+        <p class="font-label-caps text-label-caps text-secondary mb-2">PROCESS</p>
+        <h3 class="font-headline-md text-headline-md mb-3 leading-tight group-hover:italic transition-all">Seasonal Distillations: Spring in Grasse</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">A photographic journey through our perfumer partners' spring harvest in the world's fragrance capital.</p>
+      </div>
+      <div class="group cursor-pointer">
+        <div class="aspect-[4/5] overflow-hidden bg-surface-container mb-6">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgEVi6UNd2HtOGj6dB_OYHbi06nRq_ngx_SQCov56TMTmsJBOaXuQyYE6tYA98rfq57Td8vkRvhY7n8PBrw7U0u89uQzQOWZuHB44I6xdmXD34Z3ooHdrAaSA4wlrTavGi59pCdNM3_bfX67M67oRSKmIwtPH91yYbIuR-ORpuC5i8XPcv2EieEq7dMTU-kyEnh10b-7V73NBDBbd0gKaROIedv_YmFsHgRutc6VYf1VF1mtJWgin0NCuAtE1G9UkRt5FblLOMTkkO" alt="Story: The Alchemist's Table"/>
+        </div>
+        <p class="font-label-caps text-label-caps text-secondary mb-2">CRAFT</p>
+        <h3 class="font-headline-md text-headline-md mb-3 leading-tight group-hover:italic transition-all">How to Read a Fragrance: A Buyer's Guide</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Understanding top, heart, and base notes so you can confidently choose your next fragrance from our online catalog.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="mt-40 bg-surface-container-low p-16 text-center">
+    <h2 class="font-headline-lg text-headline-lg mb-4">Join the Narrative</h2>
+    <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-xl mx-auto">
+      Receive our quarterly scent stories, new catalog additions, and exclusive fragrance guides delivered to your inbox.
+    </p>
+    <form class="max-w-md mx-auto flex gap-0 border-b border-primary">
+      <input class="bg-transparent border-none focus:ring-0 w-full font-label-caps text-label-caps py-4 placeholder:text-on-surface-variant/50" placeholder="YOUR EMAIL ADDRESS" type="email"/>
+      <button class="font-label-caps text-label-caps px-4 py-4 hover:opacity-70 transition-opacity uppercase" type="submit">Subscribe</button>
+    </form>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container-low border-t border-on-background/20">
+  <div class="flex flex-col items-center justify-center w-full px-margin-desktop py-16 gap-unit">
+    <a class="font-headline-lg text-headline-lg text-primary mb-8" href="index.html">Moonlight Aroma</a>
+    <div class="flex flex-wrap justify-center gap-8 mb-12">
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Sustainability</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Shipping & Returns</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Privacy Policy</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Contact</a>
+    </div>
+    <p class="font-label-caps text-label-caps text-on-surface-variant/60">© 2024 Moonlight Aroma. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          entry.target.classList.remove('opacity-0', 'translate-y-10');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('article, section, .group').forEach(el => {
+      el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+      observer.observe(el);
+    });
+  });
+</script>
+</body>
+</html>
