@@ -1,351 +1,231 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Velvet Noir | Moonlight Aroma</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "surface-container-highest": "#e4e2e2",
-          "on-background": "#1b1c1c",
-          "primary-container": "#1c1b1b",
-          "surface-container-low": "#f5f3f3",
-          "secondary-fixed-dim": "#e9c176",
-          "outline-variant": "#c4c7c7",
-          "on-primary-container": "#858383",
-          "on-error": "#ffffff",
-          "secondary-fixed": "#ffdea5",
-          "primary-fixed-dim": "#c8c6c5",
-          "on-secondary-fixed-variant": "#5d4201",
-          "on-secondary-fixed": "#261900",
-          "surface-bright": "#fbf9f8",
-          "inverse-surface": "#303031",
-          "surface": "#fbf9f8",
-          "on-surface-variant": "#444748",
-          "on-primary": "#ffffff",
-          "primary-fixed": "#e5e2e1",
-          "tertiary-container": "#1b1c19",
-          "surface-container": "#efeded",
-          "on-secondary-container": "#785a1a",
-          "surface-container-high": "#e9e8e7",
-          "primary": "#000000",
-          "on-primary-fixed": "#1c1b1b",
-          "surface-dim": "#dbdad9",
-          "surface-variant": "#e4e2e2",
-          "secondary-container": "#fed488",
-          "surface-container-lowest": "#ffffff",
-          "secondary": "#775a19",
-          "on-secondary": "#ffffff",
-          "background": "#fbf9f8",
-          "inverse-primary": "#c8c6c5",
-          "outline": "#747878",
-          "on-surface": "#1b1c1c",
-          "tertiary": "#000000"
-        },
-        borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
-        spacing: { "unit": "8px", "margin-mobile": "20px", "gutter": "24px", "margin-desktop": "64px" },
-        fontFamily: {
-          "body-md": ["Manrope"], "label-caps": ["Manrope"], "body-lg": ["Manrope"],
-          "headline-md": ["Bodoni Moda"], "headline-lg-mobile": ["Bodoni Moda"],
-          "display-lg": ["Bodoni Moda"], "headline-lg": ["Bodoni Moda"]
-        },
-        fontSize: {
-          "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-          "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
-          "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-          "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
-          "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-          "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-          "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "600"}]
-        }
-      }
-    }
-  }
-</script>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Product Name | Moonlight Aroma</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
-  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-  body { background-color: #fbf9f8; color: #1b1c1c; }
-  .editorial-shadow { box-shadow: 20px 20px 60px #d9d7d6, -20px -20px 60px #ffffff; }
+
+:root{--gold:#c9a84c;--gold-light:#e8c97a;--ink:#0a0a0a;--surface:#111111;--surface-2:#181818;--surface-3:#222222;--text:#e8e4dc;--text-muted:#9a9080;--text-dim:#5a5550;--border:rgba(201,168,76,0.18);--border-dim:rgba(255,255,255,0.07);}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--text);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--ink);}::-webkit-scrollbar-thumb{background:var(--gold);}
+.nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border-dim);}
+.nav-inner{max-width:1360px;margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.logo-img{height:52px;width:auto;}
+.nav-links{display:flex;gap:40px;}
+.nav-links a{font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color 0.3s;border-bottom:1px solid transparent;padding-bottom:2px;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);border-bottom-color:var(--gold);}
+.nav-actions{display:flex;gap:20px;align-items:center;}
+.nav-actions a{background:none;border:none;cursor:pointer;color:var(--text-muted);transition:color 0.3s;text-decoration:none;display:flex;align-items:center;}
+.nav-actions a:hover{color:var(--gold);}
+.wa-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:#25D366;color:white;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;border:none;cursor:pointer;font-family:'Jost',sans-serif;}
+.wa-btn:hover{background:#1fb85a;}
+.wa-btn svg{width:14px;height:14px;flex-shrink:0;}
+.wa-float{position:fixed;bottom:32px;right:32px;z-index:200;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,0.4);text-decoration:none;transition:transform 0.3s;animation:pulse-wa 3s infinite;}
+.wa-float:hover{transform:scale(1.1);}
+.wa-float svg{width:28px;height:28px;}
+@keyframes pulse-wa{0%,100%{box-shadow:0 4px 24px rgba(37,211,102,0.4);}50%{box-shadow:0 4px 40px rgba(37,211,102,0.6);}}
+footer{background:var(--ink);border-top:1px solid var(--border-dim);}
+.footer-inner{max-width:1360px;margin:0 auto;padding:72px 48px 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;}
+.footer-logo{height:52px;width:auto;margin-bottom:20px;display:block;}
+.footer-desc{font-size:13px;color:var(--text-dim);line-height:1.8;max-width:260px;}
+.footer-col-title{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:500;}
+.footer-links{display:flex;flex-direction:column;gap:12px;}
+.footer-links a{font-size:13px;color:var(--text-dim);text-decoration:none;transition:color 0.3s;}
+.footer-links a:hover{color:var(--text);}
+.footer-bottom{border-top:1px solid var(--border-dim);padding:20px 48px;max-width:1360px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--text-dim);letter-spacing:0.08em;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-d1{transition-delay:0.1s;}.reveal-d2{transition-delay:0.2s;}.reveal-d3{transition-delay:0.3s;}
+.btn-primary{padding:14px 40px;background:var(--gold);color:var(--ink);font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:all 0.3s;display:inline-block;}
+.btn-primary:hover{background:var(--gold-light);}
+.btn-outline{padding:14px 40px;background:transparent;color:var(--text);font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border:1px solid var(--border);transition:all 0.3s;cursor:pointer;display:inline-block;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.section-label{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:500;}
+.link-arrow{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;font-weight:500;border-bottom:1px solid var(--text-dim);padding-bottom:2px;transition:all 0.3s;}
+.link-arrow:hover{color:var(--gold);border-color:var(--gold);}
+.product-img-placeholder{width:100%;height:100%;background:linear-gradient(160deg,#1a1a1a 0%,#222 50%,#181818 100%);display:flex;align-items:center;justify-content:center;transition:filter 0.5s;}
+.product-img-placeholder span{font-family:'Cormorant Garamond';font-size:11px;letter-spacing:0.2em;color:var(--text-dim);text-transform:uppercase;}
+@media(max-width:900px){
+  .nav-inner{padding:0 20px;}.nav-links{display:none;}
+  .footer-inner{grid-template-columns:1fr 1fr;}.footer-bottom{flex-direction:column;gap:12px;text-align:center;padding:20px;}
+}
+@media(max-width:560px){.footer-inner{grid-template-columns:1fr;}}
+
+.breadcrumb{max-width:1360px;margin:0 auto;padding:24px 48px 0;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dim);}
+.breadcrumb a{color:var(--text-dim);text-decoration:none;transition:color 0.3s;}
+.breadcrumb a:hover{color:var(--gold);}
+.breadcrumb span{margin:0 8px;color:var(--text-dim);}
+.product-section{max-width:1360px;margin:0 auto;padding:40px 48px 100px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.main-img{aspect-ratio:4/5;background:linear-gradient(160deg,#1a1a1a,#222,#181818);display:flex;align-items:center;justify-content:center;}
+.main-img span{font-family:'Cormorant Garamond';font-size:13px;letter-spacing:0.2em;color:var(--text-dim);text-transform:uppercase;}
+.thumb-row{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:2px;}
+.thumb{aspect-ratio:4/3;background:linear-gradient(160deg,#222,#1a1a1a);display:flex;align-items:center;justify-content:center;}
+.thumb span{font-size:10px;letter-spacing:0.15em;color:var(--text-dim);text-transform:uppercase;font-family:'Cormorant Garamond';}
+.product-info-panel{position:sticky;top:96px;}
+.product-eyebrow{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.product-title{font-size:clamp(36px,4vw,60px);line-height:1.05;margin-bottom:20px;}
+.product-desc{font-size:15px;color:var(--text-muted);line-height:1.9;margin-bottom:32px;font-weight:300;}
+.product-price-row{display:flex;align-items:baseline;gap:16px;padding:24px 0;border-top:1px solid var(--border-dim);border-bottom:1px solid var(--border-dim);margin-bottom:28px;}
+.price-main{font-size:32px;font-family:'Cormorant Garamond';color:var(--gold);}
+.price-note{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);}
+.size-row{margin-bottom:28px;}
+.size-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;}
+.size-btns{display:flex;gap:8px;}
+.size-btn{padding:8px 20px;border:1px solid var(--border-dim);background:transparent;color:var(--text-muted);font-size:11px;font-weight:500;letter-spacing:0.1em;cursor:pointer;transition:all 0.3s;font-family:'Jost',sans-serif;}
+.size-btn.active,.size-btn:hover{border-color:var(--gold);color:var(--gold);}
+.order-btns{display:flex;flex-direction:column;gap:10px;margin-bottom:32px;}
+.order-main{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px 40px;background:#25D366;color:white;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;border:none;cursor:pointer;font-family:'Jost',sans-serif;}
+.order-main:hover{background:#1fb85a;transform:translateY(-1px);}
+.order-main svg{width:18px;height:18px;}
+.order-sec{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px 40px;background:transparent;color:var(--text-muted);font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;border:1px solid var(--border-dim);cursor:pointer;font-family:'Jost',sans-serif;}
+.order-sec:hover{border-color:var(--gold);color:var(--gold);}
+.notes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-dim);margin-top:40px;}
+.note-card{background:var(--surface-2);padding:28px 20px;text-align:center;}
+.note-num{font-size:28px;font-family:'Cormorant Garamond';color:var(--gold);opacity:0.4;margin-bottom:12px;font-style:italic;}
+.note-title{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;}
+.note-content{font-size:13px;color:var(--text-dim);line-height:1.6;font-style:italic;}
+.related-section{max-width:1360px;margin:0 auto;padding:80px 48px;border-top:1px solid var(--border-dim);}
+.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.related-card{background:var(--surface-2);cursor:pointer;text-decoration:none;color:inherit;display:block;transition:opacity 0.3s;}
+.related-card:hover{opacity:0.8;}
+.related-img{aspect-ratio:3/4;background:linear-gradient(160deg,#1a1a1a,#222);display:flex;align-items:center;justify-content:center;}
+.related-img span{font-size:10px;letter-spacing:0.15em;color:var(--text-dim);text-transform:uppercase;font-family:'Cormorant Garamond';}
+.related-info{padding:16px 0;}
+.related-brand{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dim);margin-bottom:4px;}
+.related-name{font-size:18px;font-family:'Cormorant Garamond';margin-bottom:4px;}
+.related-price{font-size:13px;color:var(--gold);}
+@media(max-width:900px){
+  .product-section{grid-template-columns:1fr;gap:40px;padding:24px 20px 80px;}
+  .product-info-panel{position:static;}
+  .related-grid{grid-template-columns:1fr 1fr;}.related-section{padding:60px 20px;}
+  .breadcrumb{padding:20px 20px 0;}.notes-grid{grid-template-columns:1fr;}
+}
 </style>
 </head>
-<body class="min-h-screen flex flex-col font-body-md overflow-x-hidden">
-
-<!-- Nav -->
-<header class="w-full top-0 sticky z-50 bg-background border-b border-on-background/10 transition-all duration-300" id="site-header">
-  <nav class="flex justify-between items-center w-full px-margin-desktop py-gutter max-w-[1440px] mx-auto">
-    <div class="flex items-center gap-10">
-      <a class="font-headline-md text-headline-md font-medium text-primary" href="index.html">Moonlight Aroma</a>
-      <div class="hidden md:flex gap-8 items-center">
-        <a class="font-body-md text-body-md uppercase tracking-widest text-primary font-bold border-b-2 border-primary pb-1" href="collections.html">Fragrances</a>
-        <a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="scent-stories.html">Scent Stories</a>
-        <a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Heritage</a>
-      </div>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html"><img src="data:image/jpeg;base64,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" class="logo-img" alt="Moonlight Aroma Perfumery"/></a>
+    <div class="nav-links">
+      <a href="collections.html" class="active">Collections</a>
+      <a href="scent-stories.html" >Stories</a>
+      <a href="#" >About</a>
+      <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20a%20fragrance.">Contact</a>
     </div>
-    <div class="flex items-center gap-6">
-      <button class="hover:opacity-70 transition-opacity flex items-center">
-        <span class="material-symbols-outlined text-primary">search</span>
-      </button>
-      <button class="hover:opacity-70 transition-opacity flex items-center">
-        <span class="material-symbols-outlined text-primary">shopping_bag</span>
-      </button>
+    <div class="nav-actions">
+      <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20a%20fragrance." title="Chat on WhatsApp" target="_blank">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
     </div>
-  </nav>
-</header>
-
-<main class="flex-grow">
-  <!-- Product Hero -->
-  <section class="max-w-[1440px] mx-auto px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
-    <!-- Breadcrumb -->
-    <div class="col-span-12 mb-4">
-      <nav class="flex gap-2 font-label-caps text-label-caps text-on-surface-variant uppercase">
-        <a class="hover:text-primary transition-colors" href="collections.html">Fragrances</a>
-        <span>/</span>
-        <a class="hover:text-primary transition-colors" href="collections.html">Collections</a>
-        <span>/</span>
-        <span class="text-primary">Velvet Noir</span>
-      </nav>
-    </div>
-
-    <!-- Image Gallery -->
-    <div class="col-span-12 md:col-span-7 grid grid-cols-6 gap-4">
-      <div class="col-span-6 bg-surface-container-low overflow-hidden">
-        <img class="w-full h-[700px] object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdHUdXR2J91DWmhmii2DXQ6I22Q6IbpK2cnl_3uM9qlooFbssHNUCsXC_rsMc6M9eQMQpyp4ndanzO5tAbPOPw_0dTKjmpujE5P3AQ7Mg7Qj0799qwdwbNXKmdWmHRSyWLXPGt0lWsSdRC-gBMx6CbCg30BKV10Wgp95vBYZZWk-mdu3faKDfK8kjOokNiCPuvTXQpteFQEuVlwoS9hKm4X0vdbEsJFkeB53GVbSLO0XstU2Fyxu5LQaIQajzy_Pty6l2_0upK6bdu" alt="Velvet Noir main product shot"/>
-      </div>
-      <div class="col-span-3 bg-surface-container-low h-[400px] overflow-hidden">
-        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOu8-BNxs02oAgc8w4XUOwIgsq15CgN_74y8qKbc_GUcvev3thD0qtJZXEV-0zf2mk_sKEwgCbTWqdbCxApgGBuNJ1VVoq2JNUjTZu7CKBktQe4X0KKuD6od_akJ-yXa88tEkxQhH0C27zr9ObNHWe2EqoAlbDMnrqwEQAXe92ZHaUiZkOM54h8LBWZOqJarvSTmXXrCShictWmWlexnGaQyNVuCwRI8J27f9Yn1OPn3i_1faTzXyxkcprSUk2FSrc-K-LWXeLsRnM" alt="Velvet texture detail"/>
-      </div>
-      <div class="col-span-3 bg-surface-container-low h-[400px] overflow-hidden">
-        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSh3MOKTtMkJZjoOzFMTAwBxHp2MDiJ1I1jFE8EbEBGey1ozByYNizXmwlDTkitcMSyZtd4mV0RDjicror5UlROtC4qyV5ZjMBUCYL2ZDQ2PY5LFvk54q-wMZ57tfTryO5OJbTTwIaThOkMLj7qSuCfdK6cAvvbPaRUhec8tC7tFaBIexPGe3Co54hJKcOYHe91jn8kFfb6ew2U7b1ZLTp7ERUw8d3rFInq-JZAn06E1EHSAxZJ1J_8WoX2U03PbOmyHgjq3H62uqo" alt="Ingredients: rose and oud"/>
-      </div>
-    </div>
-
-    <!-- Product Info -->
-    <div class="col-span-12 md:col-span-5 sticky top-32 flex flex-col gap-8">
-      <div>
-        <span class="font-label-caps text-label-caps text-secondary tracking-[0.2em] uppercase mb-2 block">Extrait de Parfum · 100ml</span>
-        <h1 class="font-display-lg text-headline-lg md:text-display-lg text-primary leading-tight mb-4">Velvet Noir</h1>
-        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
-          A nocturnal odyssey captured in a bottle. Velvet Noir opens with a sharp, cold spice that descends into a heart of smoked oud and midnight rose, leaving a trail of black amber and vanilla that lingers until morning.
-        </p>
-      </div>
-
-      <div class="flex items-baseline gap-4 py-6 border-y border-on-background/10">
-        <span class="font-headline-md text-headline-md text-primary">$285.00</span>
-        <span class="font-label-caps text-label-caps text-on-surface-variant">100ML / 3.4 FL.OZ · Free shipping over $150</span>
-      </div>
-
-      <div class="flex flex-col gap-4">
-        <div class="flex justify-between items-center group border-b border-on-background/10 pb-4">
-          <span class="font-label-caps text-label-caps uppercase text-primary">Size</span>
-          <div class="flex gap-4">
-            <button class="font-label-caps text-label-caps border border-primary px-4 py-1 text-primary">100ML</button>
-            <button class="font-label-caps text-label-caps border border-on-background/20 px-4 py-1 text-on-surface-variant hover:border-primary hover:text-primary transition-colors">50ML</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex flex-col gap-4 mt-4">
-        <button id="add-to-bag" class="w-full bg-primary text-white py-6 font-label-caps text-label-caps uppercase tracking-[0.2em] hover:bg-on-surface-variant transition-colors active:scale-[0.98]">
-          Add to Bag
-        </button>
-        <button class="w-full border border-primary text-primary py-6 font-label-caps text-label-caps uppercase tracking-[0.2em] hover:bg-primary hover:text-white transition-all">
-          Add to Wishlist
-        </button>
-      </div>
-
-      <div class="mt-4 flex flex-col gap-6">
-        <div class="flex items-start gap-4">
-          <span class="material-symbols-outlined text-primary">local_shipping</span>
-          <div>
-            <p class="font-label-caps text-label-caps uppercase text-primary">Complimentary Shipping</p>
-            <p class="text-xs text-on-surface-variant">On all orders above $150. Worldwide delivery in 3–5 business days.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-4">
-          <span class="material-symbols-outlined text-primary">eco</span>
-          <div>
-            <p class="font-label-caps text-label-caps uppercase text-primary">Sustainable Packaging</p>
-            <p class="text-xs text-on-surface-variant">Recyclable glass and FSC-certified paper. Carbon-neutral shipping available.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-4">
-          <span class="material-symbols-outlined text-primary">swap_horiz</span>
-          <div>
-            <p class="font-label-caps text-label-caps uppercase text-primary">30-Day Returns</p>
-            <p class="text-xs text-on-surface-variant">Unopened items accepted within 30 days of receipt.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Scent Composition -->
-  <section class="bg-surface-container-low py-24 px-margin-desktop">
-    <div class="max-w-[1440px] mx-auto">
-      <div class="flex flex-col items-center mb-16 text-center">
-        <span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase mb-4">The Olfactory Pyramid</span>
-        <h2 class="font-headline-lg text-headline-lg text-primary">Scent Composition</h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-on-background/10">
-        <div class="bg-surface-container-low p-12 flex flex-col items-center text-center group hover:bg-background transition-colors duration-500">
-          <div class="w-16 h-16 rounded-full border border-secondary flex items-center justify-center mb-8 group-hover:bg-secondary group-hover:text-white transition-all">
-            <span class="font-label-caps text-label-caps">01</span>
-          </div>
-          <h3 class="font-label-caps text-label-caps uppercase tracking-widest text-primary mb-4">Top Notes</h3>
-          <p class="font-headline-md text-[24px] mb-4 italic">The Awakening</p>
-          <p class="font-body-md text-on-surface-variant">Pink Pepper, Cold Saffron, and White Bergamot — an immediate, electric introduction that lasts 10–15 minutes.</p>
-          <div class="mt-8 flex gap-2 flex-wrap justify-center">
-            <span class="px-3 py-1 border border-secondary/30 text-[10px] font-bold uppercase tracking-tighter text-secondary">Vibrant</span>
-            <span class="px-3 py-1 border border-secondary/30 text-[10px] font-bold uppercase tracking-tighter text-secondary">Spicy</span>
-          </div>
-        </div>
-        <div class="bg-surface-container-low p-12 flex flex-col items-center text-center group hover:bg-background transition-colors duration-500">
-          <div class="w-16 h-16 rounded-full border border-secondary flex items-center justify-center mb-8 group-hover:bg-secondary group-hover:text-white transition-all">
-            <span class="font-label-caps text-label-caps">02</span>
-          </div>
-          <h3 class="font-label-caps text-label-caps uppercase tracking-widest text-primary mb-4">Heart Notes</h3>
-          <p class="font-headline-md text-[24px] mb-4 italic">The Soul</p>
-          <p class="font-body-md text-on-surface-variant">Midnight Rose and Smoked Oud — a deep, floral-woody core that defines the fragrance's character over 2–4 hours.</p>
-          <div class="mt-8 flex gap-2 flex-wrap justify-center">
-            <span class="px-3 py-1 border border-secondary/30 text-[10px] font-bold uppercase tracking-tighter text-secondary">Opulent</span>
-            <span class="px-3 py-1 border border-secondary/30 text-[10px] font-bold uppercase tracking-tighter text-secondary">Floral</span>
-          </div>
-        </div>
-        <div class="bg-surface-container-low p-12 flex flex-col items-center text-center group hover:bg-background transition-colors duration-500">
-          <div class="w-16 h-16 rounded-full border border-secondary flex items-center justify-center mb-8 group-hover:bg-secondary group-hover:text-white transition-all">
-            <span class="font-label-caps text-label-caps">03</span>
-          </div>
-          <h3 class="font-label-caps text-label-caps uppercase tracking-widest text-primary mb-4">Base Notes</h3>
-          <p class="font-headline-md text-[24px] mb-4 italic">The Resonance</p>
-          <p class="font-body-md text-on-surface-variant">Black Amber, Vanilla Bourbon, and Patchouli — a lingering, addictive trail that lasts 8–12 hours on skin.</p>
-          <div class="mt-8 flex gap-2 flex-wrap justify-center">
-            <span class="px-3 py-1 border border-secondary/30 text-[10px] font-bold uppercase tracking-tighter text-secondary">Warm</span>
-            <span class="px-3 py-1 border border-secondary/30 text-[10px] font-bold uppercase tracking-tighter text-secondary">Lasting</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- The Ritual -->
-  <section class="max-w-[1440px] mx-auto px-margin-desktop py-24 flex flex-col md:flex-row gap-16 items-center">
-    <div class="w-full md:w-1/2">
-      <img class="w-full h-[600px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLsBRShoW60FPcHB7I9aMGQK6wsFEI7XgT3c_Xb_2PIiVlKwfEKgytPbW425HAKBv8EWyZbwHjiyKqk3dfnvCvXra98GeNx4TShcaJQuV5-hTH4zEJaqfWBtNkZLIDN8QrML09B6frklU3A2u_LVfhD6sBycyOGbJO_ukD9wv2LD1WEDwYpC8XaAFtUXjPyBOeVV8FXYGOifdgAajB-vC4Hp2AEvmhSl8CDk5ohoifPIW9FJtOjB3Sod0OPh-pg5IMb3SLp3OyZS9W" alt="Application ritual"/>
-    </div>
-    <div class="w-full md:w-1/2 flex flex-col gap-8">
-      <span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase">Art of Application</span>
-      <h2 class="font-headline-lg text-headline-lg text-primary">The Ritual</h2>
-      <div class="space-y-8">
-        <div class="flex gap-6 items-start">
-          <span class="font-display-lg text-headline-md opacity-20 italic">01</span>
-          <div class="pt-2">
-            <h4 class="font-label-caps text-label-caps uppercase text-primary mb-2">Preparation</h4>
-            <p class="font-body-md text-on-surface-variant">Apply to moisturised skin for best longevity. Target pulse points — wrists, neck, and behind the ears — where body heat slowly releases the fragrance over 12 hours.</p>
-          </div>
-        </div>
-        <div class="flex gap-6 items-start">
-          <span class="font-display-lg text-headline-md opacity-20 italic">02</span>
-          <div class="pt-2">
-            <h4 class="font-label-caps text-label-caps uppercase text-primary mb-2">Distance</h4>
-            <p class="font-body-md text-on-surface-variant">Hold the bottle six inches from skin and spray in a wide arc, allowing the Extrait to mist evenly rather than concentrate in one spot.</p>
-          </div>
-        </div>
-        <div class="flex gap-6 items-start">
-          <span class="font-display-lg text-headline-md opacity-20 italic">03</span>
-          <div class="pt-2">
-            <h4 class="font-label-caps text-label-caps uppercase text-primary mb-2">Patience</h4>
-            <p class="font-body-md text-on-surface-variant">Allow the scent to settle for 15 minutes. Avoid rubbing wrists together — this breaks down the delicate top-note molecules and disrupts the intended progression.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- You May Also Like -->
-  <section class="max-w-[1440px] mx-auto px-margin-desktop py-24 border-t border-on-background/10">
-    <div class="flex justify-between items-end mb-12">
-      <div>
-        <span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase mb-4 block">You may also enjoy</span>
-        <h2 class="font-headline-lg text-headline-lg text-primary">Complementary Fragrances</h2>
-      </div>
-      <a href="collections.html" class="font-label-caps text-label-caps border-b border-primary pb-1 hover:opacity-70 transition-opacity">View All</a>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div class="group cursor-pointer">
-        <div class="relative overflow-hidden mb-6 aspect-[3/4]">
-          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDugFkup3HUj1Dl7GImZfyjW_kouNtjstUVxzV_SOjU-eT5O7bEdrr5oA-k7IcLWRFmrofV3kzRvhzjXDbf5VhDTbsR968Z-DmPihvpvQsyyaoMH3Vyrsaw9L0lmVgZSo7ZlxGo8bvnfxkACv-Xj_wqBJGExxMM0FxCNOiA-uCD9skdjZUlpWXdYvcGzSpe0gWw-BiF4bRZxinszWgrCTyzBEEhRhMCENKV8nh24_Uxevc8gQdZID7lV7wUd9N5S0EyUsjIsQqDV8EV" alt="Morning Dew"/>
-        </div>
-        <p class="font-label-caps text-[10px] uppercase text-on-surface-variant tracking-widest mb-1">Floral · Citrus</p>
-        <h3 class="font-headline-md text-[20px] text-primary group-hover:underline underline-offset-4">Morning Dew</h3>
-        <p class="font-body-md text-on-surface-variant mt-2">$210.00</p>
-      </div>
-      <div class="group cursor-pointer">
-        <div class="relative overflow-hidden mb-6 aspect-[3/4]">
-          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBrGU49z45j_tuIuQVdVjUdQCAmyWKY4vs3NxR2volOCcmmDzHXwmFlcM44EMKWkuf0KkMNblgdmyDXuIfx7F6hrdT_ObvEFRg8XTasT7k51DfMBIta1t95r_mWeOmwN7PGz1IFmIK8-HblJWVxBm_MWDNHhti_UtNSaD0Dh6_r0dWCkpCiuGY7FiPahlyqfXYwsQgshTycEwVxvE-V9RMHO36Q5sNVU5smYqxfXiSW1I5EUk7NLPtCpKOLFwajNv-EUnwzMJHJAVl" alt="Gilded Amber"/>
-        </div>
-        <p class="font-label-caps text-[10px] uppercase text-on-surface-variant tracking-widest mb-1">Amber · Woody</p>
-        <h3 class="font-headline-md text-[20px] text-primary group-hover:underline underline-offset-4">Gilded Amber</h3>
-        <p class="font-body-md text-on-surface-variant mt-2">$245.00</p>
-      </div>
-      <div class="group cursor-pointer">
-        <div class="relative overflow-hidden mb-6 aspect-[3/4]">
-          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnDY_8MH6C7yBOf7cDxiCbyX0_L17-6MRd9bzZYEhZJ2YPYrf90HYWqExUflyyCYAA7E9LxRxl_zzZhXNal6bJFV83mTJg_KuJo3oqlGFlvZMXBXjtgKNqRvVwYBp-N74VyU3b3FuSOOTpBO6sqC11EHmo_lT5ahz202WIC1dK_Yrucozw6ylhkMZ3l8p4I8c1rhsFFPquXaRvfPjJaJcaiO5eoaDBNB949wfuvYp07C_CcNGrL-ExhOmsQa_TR" alt="Silver Mist"/>
-        </div>
-        <p class="font-label-caps text-[10px] uppercase text-on-surface-variant tracking-widest mb-1">Ozone · Mineral</p>
-        <h3 class="font-headline-md text-[20px] text-primary group-hover:underline underline-offset-4">Silver Mist</h3>
-        <p class="font-body-md text-on-surface-variant mt-2">$195.00</p>
-      </div>
-      <div class="group cursor-pointer">
-        <div class="relative overflow-hidden mb-6 aspect-[3/4]">
-          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0hgV9HGoIqlMeihKD43BYTHstKNNTJdolhk9B_qfWdw4Z8lALarO8XsDTondQHWVVWU85igBPH73hAuf60PTNZTkAsYasmJvW1Na_Zb32zlm4ql0mpzsprlC6O69h2prZHieNo3IfKURGMpopebWcuSwk1VQ2nFtDx8Lbp6-hCfvFUdSbW5zuiRfPlnEdtNECudWz5YlFKnzkSAS3yys06DKMT-WcKodAltlX5H1uvDbZhfgKABHdixr8o05NBTtyMWEdPr4tKLlR" alt="Verdant Soul"/>
-        </div>
-        <p class="font-label-caps text-[10px] uppercase text-on-surface-variant tracking-widest mb-1">Green · Earthy</p>
-        <h3 class="font-headline-md text-[20px] text-primary group-hover:underline underline-offset-4">Verdant Soul</h3>
-        <p class="font-body-md text-on-surface-variant mt-2">$225.00</p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- Footer -->
-<footer class="w-full mt-auto bg-surface-container-low border-t border-on-background/20 flex flex-col items-center justify-center px-margin-desktop py-16 gap-unit">
-  <span class="font-headline-lg text-headline-lg text-primary mb-8">Moonlight Aroma</span>
-  <div class="flex flex-wrap justify-center gap-10 mb-12">
-    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#">Sustainability</a>
-    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#">Shipping & Returns</a>
-    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#">Privacy Policy</a>
-    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#">Contact</a>
   </div>
-  <div class="flex gap-6 mb-12">
-    <a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
-    <a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+</nav>
+<div class="breadcrumb reveal">
+  <a href="collections.html">Collections</a><span>/</span>
+  <span style="color:var(--gold)">Product Name</span>
+</div>
+<div class="product-section">
+  <div class="reveal">
+    <div class="main-img"><span>Main Product Image</span></div>
+    <div class="thumb-row">
+      <div class="thumb"><span>Detail Image</span></div>
+      <div class="thumb"><span>Detail Image</span></div>
+    </div>
   </div>
-  <p class="font-label-caps text-[10px] text-on-surface-variant opacity-60">© 2024 Moonlight Aroma. All rights reserved.</p>
+  <div class="product-info-panel reveal reveal-d1">
+    <div class="product-eyebrow">Brand Placeholder &nbsp;|&nbsp; Category Placeholder</div>
+    <h1 class="product-title">Product Name</h1>
+    <p class="product-desc">Description placeholder. Replace with the product's actual description, concentration, and key details.</p>
+    <div class="product-price-row">
+      <span class="price-main">Price Placeholder</span>
+      <span class="price-note">Size Placeholder &nbsp;|&nbsp; Shipping info placeholder</span>
+    </div>
+    <div class="size-row">
+      <div class="size-label">Size</div>
+      <div class="size-btns">
+        <button class="size-btn active">100 ML</button>
+        <button class="size-btn">50 ML</button>
+      </div>
+    </div>
+    <div class="order-btns">
+      <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name%20%28100ml%29." class="order-main" target="_blank">
+        <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Order via WhatsApp
+      </a>
+      <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20more%20about%20Product%20Name." class="order-sec" target="_blank">Ask a Question</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div style="display:flex;align-items:start;gap:14px;"><span style="color:var(--gold);font-size:16px;">&#10003;</span><div><div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2px;">Delivery Info</div><div style="font-size:12px;color:var(--text-muted);">Delivery details placeholder</div></div></div>
+      <div style="display:flex;align-items:start;gap:14px;"><span style="color:var(--gold);font-size:16px;">&#10003;</span><div><div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2px;">Authenticity</div><div style="font-size:12px;color:var(--text-muted);">All products are 100% authentic</div></div></div>
+    </div>
+    <div class="notes-grid">
+      <div class="note-card"><div class="note-num">01</div><div class="note-title">Top Notes</div><div class="note-content">Notes Placeholder</div></div>
+      <div class="note-card"><div class="note-num">02</div><div class="note-title">Heart Notes</div><div class="note-content">Notes Placeholder</div></div>
+      <div class="note-card"><div class="note-num">03</div><div class="note-title">Base Notes</div><div class="note-content">Notes Placeholder</div></div>
+    </div>
+  </div>
+</div>
+<div class="related-section reveal">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;flex-wrap:wrap;gap:16px;">
+    <div><div class="section-label">You May Also Like</div><h2 style="font-size:clamp(28px,3vw,44px);">Related Fragrances</h2></div>
+    <a href="collections.html" class="link-arrow">View All</a>
+  </div>
+  <div class="related-grid">
+    <a href="product.html" class="related-card reveal" style="transition-delay:0ms"><div class="related-img"><span>Product Image</span></div><div class="related-info"><div class="related-brand">Brand Placeholder</div><div class="related-name">Product Name</div><div class="related-price">Price Placeholder</div></div></a><a href="product.html" class="related-card reveal" style="transition-delay:100ms"><div class="related-img"><span>Product Image</span></div><div class="related-info"><div class="related-brand">Brand Placeholder</div><div class="related-name">Product Name</div><div class="related-price">Price Placeholder</div></div></a><a href="product.html" class="related-card reveal" style="transition-delay:200ms"><div class="related-img"><span>Product Image</span></div><div class="related-info"><div class="related-brand">Brand Placeholder</div><div class="related-name">Product Name</div><div class="related-price">Price Placeholder</div></div></a><a href="product.html" class="related-card reveal" style="transition-delay:300ms"><div class="related-img"><span>Product Image</span></div><div class="related-info"><div class="related-brand">Brand Placeholder</div><div class="related-name">Product Name</div><div class="related-price">Price Placeholder</div></div></a>
+  </div>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <img src="data:image/jpeg;base64,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" class="footer-logo" alt="Moonlight Aroma Perfumery"/>
+      <p class="footer-desc">Curated luxury fragrances. Contact us on WhatsApp to check availability and place your order.</p>
+      <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20your%20fragrances." class="wa-btn" style="margin-top:24px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp Us</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Shop</div>
+      <div class="footer-links">
+        <a href="collections.html">All Fragrances</a>
+        <a href="collections.html?gender=male">Men</a>
+        <a href="collections.html?gender=female">Women</a>
+        <a href="collections.html">Unisex</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Information</div>
+      <div class="footer-links">
+        <a href="scent-stories.html">Stories</a>
+        <a href="#">About Us</a>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Returns</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-links">
+        <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20your%20fragrances." target="_blank">WhatsApp: +260 XX XXX XXXX</a>
+        <a href="#">Email Placeholder</a>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&#169; 2025 Moonlight Aroma Perfumery. All rights reserved.</span>
+    <span>Lusaka, Zambia</span>
+  </div>
 </footer>
-
+<a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20a%20fragrance." class="wa-float" title="Chat on WhatsApp" target="_blank">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 <script>
-  window.addEventListener('scroll', () => {
-    const header = document.getElementById('site-header');
-    if (window.scrollY > 50) header.classList.add('py-4','editorial-shadow');
-    else header.classList.remove('py-4','editorial-shadow');
-  });
-
-  document.getElementById('add-to-bag').addEventListener('click', function() {
-    const orig = this.innerText;
-    this.innerText = 'Added to Bag ✓';
-    this.classList.replace('bg-primary','bg-secondary');
-    setTimeout(() => {
-      this.innerText = orig;
-      this.classList.replace('bg-secondary','bg-primary');
-    }, 2000);
-  });
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.06});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('.size-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{document.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');});
+});
 </script>
 </body>
 </html>

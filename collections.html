@@ -1,353 +1,462 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Collections | Moonlight Aroma</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400&family=Hanken+Grotesk:wght@400;600&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "primary-fixed-dim": "#e9c176",
-          "surface": "#131313",
-          "surface-bright": "#3a3939",
-          "on-surface-variant": "#d1c5b4",
-          "surface-container-high": "#2a2a2a",
-          "primary-fixed": "#ffdea5",
-          "surface-container": "#201f1f",
-          "on-primary": "#412d00",
-          "surface-container-low": "#1c1b1b",
-          "primary-container": "#c5a059",
-          "on-background": "#e5e2e1",
-          "surface-container-highest": "#353534",
-          "outline-variant": "#4e4639",
-          "on-primary-container": "#4e3700",
-          "secondary": "#c9c6c2",
-          "inverse-primary": "#775a19",
-          "background": "#131313",
-          "on-surface": "#e5e2e1",
-          "outline": "#9a8f80",
-          "on-primary-fixed": "#261900",
-          "primary": "#e9c176",
-          "secondary-container": "#474743",
-          "surface-dim": "#131313",
-          "surface-variant": "#353534",
-          "surface-container-lowest": "#0e0e0e"
-        },
-        spacing: {
-          "container-max": "1280px",
-          "margin-desktop": "80px",
-          "section-gap": "120px",
-          "margin-mobile": "20px",
-          "gutter": "24px"
-        },
-        fontFamily: {
-          "display-lg": ["Bodoni Moda"],
-          "headline-lg": ["Bodoni Moda"],
-          "body-md": ["Hanken Grotesk"],
-          "headline-md": ["Bodoni Moda"],
-          "body-lg": ["Hanken Grotesk"],
-          "label-lg": ["Hanken Grotesk"],
-          "headline-sm": ["Bodoni Moda"],
-          "headline-lg-mobile": ["Bodoni Moda"]
-        },
-        fontSize: {
-          "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-          "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
-          "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-          "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
-          "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
-          "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600"}],
-          "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
-          "headline-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "500"}]
-        }
-      }
-    }
-  }
-</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
-  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: #131313; }
-  ::-webkit-scrollbar-thumb { background: #4e4639; }
-  .glass-nav { backdrop-filter: blur(20px); background: rgba(19,19,19,0.8); }
-  .reveal-on-scroll { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-  .reveal-on-scroll.active { opacity: 1; transform: translateY(0); }
+
+:root{--gold:#c9a84c;--gold-light:#e8c97a;--ink:#0a0a0a;--surface:#111111;--surface-2:#181818;--surface-3:#222222;--text:#e8e4dc;--text-muted:#9a9080;--text-dim:#5a5550;--border:rgba(201,168,76,0.18);--border-dim:rgba(255,255,255,0.07);}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--text);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--ink);}::-webkit-scrollbar-thumb{background:var(--gold);}
+.nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border-dim);}
+.nav-inner{max-width:1360px;margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.logo-img{height:52px;width:auto;}
+.nav-links{display:flex;gap:40px;}
+.nav-links a{font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color 0.3s;border-bottom:1px solid transparent;padding-bottom:2px;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);border-bottom-color:var(--gold);}
+.nav-actions{display:flex;gap:20px;align-items:center;}
+.nav-actions a{background:none;border:none;cursor:pointer;color:var(--text-muted);transition:color 0.3s;text-decoration:none;display:flex;align-items:center;}
+.nav-actions a:hover{color:var(--gold);}
+.wa-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:#25D366;color:white;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;border:none;cursor:pointer;font-family:'Jost',sans-serif;}
+.wa-btn:hover{background:#1fb85a;}
+.wa-btn svg{width:14px;height:14px;flex-shrink:0;}
+.wa-float{position:fixed;bottom:32px;right:32px;z-index:200;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,0.4);text-decoration:none;transition:transform 0.3s;animation:pulse-wa 3s infinite;}
+.wa-float:hover{transform:scale(1.1);}
+.wa-float svg{width:28px;height:28px;}
+@keyframes pulse-wa{0%,100%{box-shadow:0 4px 24px rgba(37,211,102,0.4);}50%{box-shadow:0 4px 40px rgba(37,211,102,0.6);}}
+footer{background:var(--ink);border-top:1px solid var(--border-dim);}
+.footer-inner{max-width:1360px;margin:0 auto;padding:72px 48px 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;}
+.footer-logo{height:52px;width:auto;margin-bottom:20px;display:block;}
+.footer-desc{font-size:13px;color:var(--text-dim);line-height:1.8;max-width:260px;}
+.footer-col-title{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:500;}
+.footer-links{display:flex;flex-direction:column;gap:12px;}
+.footer-links a{font-size:13px;color:var(--text-dim);text-decoration:none;transition:color 0.3s;}
+.footer-links a:hover{color:var(--text);}
+.footer-bottom{border-top:1px solid var(--border-dim);padding:20px 48px;max-width:1360px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--text-dim);letter-spacing:0.08em;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-d1{transition-delay:0.1s;}.reveal-d2{transition-delay:0.2s;}.reveal-d3{transition-delay:0.3s;}
+.btn-primary{padding:14px 40px;background:var(--gold);color:var(--ink);font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:all 0.3s;display:inline-block;}
+.btn-primary:hover{background:var(--gold-light);}
+.btn-outline{padding:14px 40px;background:transparent;color:var(--text);font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border:1px solid var(--border);transition:all 0.3s;cursor:pointer;display:inline-block;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.section-label{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:500;}
+.link-arrow{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;font-weight:500;border-bottom:1px solid var(--text-dim);padding-bottom:2px;transition:all 0.3s;}
+.link-arrow:hover{color:var(--gold);border-color:var(--gold);}
+.product-img-placeholder{width:100%;height:100%;background:linear-gradient(160deg,#1a1a1a 0%,#222 50%,#181818 100%);display:flex;align-items:center;justify-content:center;transition:filter 0.5s;}
+.product-img-placeholder span{font-family:'Cormorant Garamond';font-size:11px;letter-spacing:0.2em;color:var(--text-dim);text-transform:uppercase;}
+@media(max-width:900px){
+  .nav-inner{padding:0 20px;}.nav-links{display:none;}
+  .footer-inner{grid-template-columns:1fr 1fr;}.footer-bottom{flex-direction:column;gap:12px;text-align:center;padding:20px;}
+}
+@media(max-width:560px){.footer-inner{grid-template-columns:1fr;}}
+
+.page-header{max-width:1360px;margin:0 auto;padding:72px 48px 0;}
+.page-title{font-size:clamp(40px,6vw,80px);line-height:1.0;letter-spacing:-0.02em;margin-bottom:12px;}
+.page-sub{font-size:15px;color:var(--text-muted);line-height:1.8;max-width:480px;margin-bottom:48px;}
+.gender-tabs{display:flex;gap:0;border-bottom:1px solid var(--border-dim);margin-bottom:0;}
+.gender-tab{padding:18px 40px;font-size:12px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;border:none;background:transparent;color:var(--text-dim);transition:all 0.3s;border-bottom:2px solid transparent;margin-bottom:-1px;font-family:'Jost',sans-serif;}
+.gender-tab:hover{color:var(--text-muted);}
+.gender-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+.filter-section{max-width:1360px;margin:0 auto;padding:32px 48px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.scent-filters{display:flex;gap:8px;flex-wrap:wrap;}
+.filter-btn{padding:7px 18px;background:transparent;border:1px solid var(--border-dim);color:var(--text-muted);font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;font-family:'Jost',sans-serif;}
+.filter-btn:hover,.filter-btn.active-type{border-color:var(--gold);color:var(--gold);}
+.results-count{font-size:11px;color:var(--text-dim);letter-spacing:0.1em;text-transform:uppercase;}
+.product-grid{max-width:1360px;margin:0 auto;padding:32px 48px 100px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.product-card{background:var(--surface-2);cursor:pointer;}
+.product-card:hover .product-img-placeholder{filter:brightness(0.7);}
+.product-card:hover .product-overlay{opacity:1;}
+.product-img-wrap{aspect-ratio:3/4;overflow:hidden;position:relative;}
+.product-overlay{position:absolute;inset:0;background:rgba(10,10,10,0.5);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.4s;}
+.product-badge{position:absolute;top:20px;left:20px;background:var(--gold);color:var(--ink);font-size:9px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;padding:5px 12px;}
+.product-info{padding:20px 0;}
+.product-brand{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim);margin-bottom:6px;}
+.product-name{font-size:22px;font-family:'Cormorant Garamond';margin-bottom:4px;}
+.product-notes{font-size:13px;color:var(--text-muted);margin-bottom:12px;font-style:italic;}
+.product-footer{display:flex;justify-content:space-between;align-items:center;}
+.product-price{font-size:14px;color:var(--gold);}
+.gender-badge{position:absolute;top:20px;right:20px;font-size:9px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;padding:4px 10px;border:1px solid var(--border-dim);background:rgba(10,10,10,0.7);color:var(--text-muted);}
+.no-results{grid-column:1/-1;padding:80px 0;text-align:center;color:var(--text-dim);font-size:15px;display:none;}
+@media(max-width:900px){
+  .page-header{padding:48px 20px 0;}.product-grid{grid-template-columns:1fr 1fr;padding:24px 20px 80px;}
+  .filter-section{padding:24px 20px 0;}.gender-tab{padding:14px 24px;font-size:11px;}
+}
+@media(max-width:560px){.product-grid{grid-template-columns:1fr;}}
 </style>
 </head>
-<body class="bg-surface text-on-surface font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html"><img src="data:image/jpeg;base64,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" class="logo-img" alt="Moonlight Aroma Perfumery"/></a>
+    <div class="nav-links">
+      <a href="collections.html" class="active">Collections</a>
+      <a href="scent-stories.html" >Stories</a>
+      <a href="#" >About</a>
+      <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20a%20fragrance.">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20a%20fragrance." title="Chat on WhatsApp" target="_blank">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
 
-<!-- Nav -->
-<header class="bg-surface/80 backdrop-blur-xl top-0 z-50 sticky border-b border-outline-variant/30">
-  <nav class="flex justify-between items-center px-margin-desktop py-6 w-full max-w-container-max mx-auto">
-    <div class="flex items-center gap-12">
-      <a class="font-display-lg text-headline-md tracking-tighter italic text-primary" href="index.html">Moonlight Aroma</a>
-      <div class="hidden md:flex gap-8">
-        <a class="font-label-lg text-label-lg uppercase tracking-[0.2em] text-primary border-b border-primary pb-1" href="collections.html">Collections</a>
-        <a class="font-label-lg text-label-lg uppercase tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-300" href="scent-stories.html">Scent Stories</a>
-        <a class="font-label-lg text-label-lg uppercase tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Heritage</a>
-        <a class="font-label-lg text-label-lg uppercase tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
-      </div>
-    </div>
-    <div class="flex items-center gap-6">
-      <button class="material-symbols-outlined text-primary scale-100 active:scale-95 transition-transform">search</button>
-      <button class="material-symbols-outlined text-primary scale-100 active:scale-95 transition-transform">person</button>
-      <button class="material-symbols-outlined text-primary scale-100 active:scale-95 transition-transform">shopping_bag</button>
-    </div>
-  </nav>
-</header>
+<div class="page-header reveal">
+  <div class="section-label">Browse</div>
+  <h1 class="page-title">All Fragrances</h1>
+  <p class="page-sub">Our full selection of curated luxury fragrances. Tap any product to enquire via WhatsApp.</p>
+  <div class="gender-tabs">
+    <button class="gender-tab active" data-gender="all">All</button>
+    <button class="gender-tab" data-gender="male">For Him</button>
+    <button class="gender-tab" data-gender="female">For Her</button>
+    <button class="gender-tab" data-gender="unisex">Unisex</button>
+  </div>
+</div>
 
-<main class="w-full">
-  <!-- Hero -->
-  <section class="relative h-[819px] w-full flex items-center overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <img class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlFCAthwqyAxeLkpmfcrM1Zu-25sLKc9W6NeLNUAFk8unPWQKHTnBgu1SoHfLy0o7BQ_YWbDOOYWeCIm40RKDH_DvnUNl3Hl8PJ79eNyx7lfOj32tGfzOYBw1IRWgw3-4j0jKb7vluf7uLIOJrk4BGOQhgYLFmqwfbAHJ09anSnkuduZYX-wgBJvJtNLdRNh4JXhZpyYicusyhLTD2Rw_v44UodAcI0Q_8E7NgXMdLlvM5vsPRBqMfLLHT3ovgDdVGG45wuxh2B4rx" alt="Moonlight Aroma featured collection hero"/>
-      <div class="absolute inset-0 bg-gradient-to-r from-surface via-transparent to-transparent"></div>
-    </div>
-    <div class="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full">
-      <p class="font-label-lg text-label-lg text-primary uppercase tracking-[0.4em] mb-4">New Season</p>
-      <h1 class="font-display-lg text-display-lg text-on-surface max-w-3xl mb-8 leading-tight">Nocturnal Memoirs</h1>
-      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-10">A curation of scents that inhabit the space between twilight and dawn. Our most evocative compositions, now available to explore online.</p>
-      <a href="#catalog" class="px-10 py-4 bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-[0.2em] transition-all hover:bg-primary-fixed hover:tracking-[0.25em] active:scale-95 inline-block">Explore Collection</a>
-    </div>
-  </section>
+<div class="filter-section reveal">
+  <div class="scent-filters">
+    <button class="filter-btn active-type" data-type="all">All Scents</button>
+    <button class="filter-btn" data-type="woody">Woody</button>
+    <button class="filter-btn" data-type="floral">Floral</button>
+    <button class="filter-btn" data-type="oriental">Oriental</button>
+    <button class="filter-btn" data-type="fresh">Fresh</button>
+    <button class="filter-btn" data-type="experimental">Experimental</button>
+  </div>
+  <div class="results-count" id="results-count">12 fragrances</div>
+</div>
 
-  <!-- Catalog Grid -->
-  <section id="catalog" class="py-section-gap px-margin-desktop max-w-container-max mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-      <div>
-        <h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">The Full Collection</h2>
-        <p class="text-on-surface-variant font-body-md">Handpicked fragrances defined by rarity and precision. Each available for online order.</p>
-      </div>
-      <div class="flex flex-wrap gap-4">
-        <button class="filter-btn px-6 py-2 border border-primary text-primary font-label-lg text-label-lg uppercase tracking-wider active-filter" data-filter="all">All Scents</button>
-        <button class="filter-btn px-6 py-2 border border-outline-variant text-on-surface-variant font-label-lg text-label-lg uppercase tracking-wider hover:border-primary hover:text-primary transition-all" data-filter="woody">Woody</button>
-        <button class="filter-btn px-6 py-2 border border-outline-variant text-on-surface-variant font-label-lg text-label-lg uppercase tracking-wider hover:border-primary hover:text-primary transition-all" data-filter="floral">Floral</button>
-        <button class="filter-btn px-6 py-2 border border-outline-variant text-on-surface-variant font-label-lg text-label-lg uppercase tracking-wider hover:border-primary hover:text-primary transition-all" data-filter="experimental">Experimental</button>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-24 gap-x-gutter">
-      <!-- Product 1 -->
-      <div class="reveal-on-scroll group cursor-pointer product-card" data-category="woody">
-        <a href="product.html">
-          <div class="aspect-[4/5] bg-surface-container-low overflow-hidden mb-6 relative border border-transparent group-hover:border-outline-variant/30 transition-all duration-700">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiFIhd0YNg66cwqbLzG9o734iKYpefa7u4eIH2cUeiPRcq8CrZjNinUKveEzO6ju2IusjZvT_klSrM4aT2lL31L_Cuoz71FVToTh_DTXuaJz2VxcTdYr_BU8Wn2iMXRSD3Jk10AbWwKJuWxtDv9A36C9zusim3ouSQ0Rr2TQGPF8cY1r1Vn0tfkiIYGDc_jU1woILwsAUH7lCX8aOCQs3oxUIxWVa0sxCqbYz-qkzrTDPioSxwM9fguF9kUX-MFu0RXbRmmORLcHsx" alt="Oud Midnight"/>
-            <div class="absolute top-4 left-4">
-              <span class="px-3 py-1 bg-primary text-on-primary font-label-lg text-[10px] uppercase tracking-widest">Bestseller</span>
-            </div>
-          </div>
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="font-headline-sm text-headline-sm text-on-surface">Oud Midnight</h3>
-            <span class="font-headline-sm text-headline-sm text-primary">$280</span>
-          </div>
-          <p class="font-body-md text-on-surface-variant italic mb-4">Indonesian Oud, Black Cardamom, Dark Plum</p>
-          <div class="flex gap-2">
-            <span class="px-2 py-1 border border-outline-variant text-[10px] uppercase font-label-lg text-on-surface-variant">Woody</span>
-            <span class="px-2 py-1 border border-outline-variant text-[10px] uppercase font-label-lg text-on-surface-variant">Intense</span>
+<div class="product-grid" id="product-grid">
+  <div class="product-card reveal" data-gender="male" data-type="woody" style="">
+      <div class="product-img-wrap">
+        <a href="product.html" style="display:block;height:100%;text-decoration:none;">
+          <div class="product-img-placeholder"><span>Product Image</span></div>
+          <div class="product-badge">Bestseller</div>
+          <div class="product-overlay">
+            <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" onclick="event.stopPropagation();return true;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
           </div>
         </a>
       </div>
-
-      <!-- Product 2 -->
-      <div class="reveal-on-scroll group cursor-pointer product-card" data-category="floral" style="transition-delay:100ms">
-        <a href="product.html">
-          <div class="aspect-[4/5] bg-surface-container-low overflow-hidden mb-6 relative border border-transparent group-hover:border-outline-variant/30 transition-all duration-700">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_tasfA_uDO4PfX06lX6DnOUjpC_YfSYKdPAKBoVfsM161qkoGBMJmXdWWZrSuf8I-WvSu1FTHeZqG8sb1DTCpptOB0xv8Jp9t4kztH7Db_7CnbmzSdUT67J01-c-KcHEAb4Taqp1OM2IUuSBHJtPPm5p9okzlKoUAAIl6SwELduNKO4gKy9FGaMDSaV9cBxq8vcND3cx7L93kBftdYPh5_jYrhtYMFW0pY_4itkA4yL_-_dMwU24cyGRt6GUZe_am1gQZ4EENE2IH" alt="Glass Petal"/>
-          </div>
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="font-headline-sm text-headline-sm text-on-surface">Glass Petal</h3>
-            <span class="font-headline-sm text-headline-sm text-primary">$195</span>
-          </div>
-          <p class="font-body-md text-on-surface-variant italic mb-4">White Jasmine, Frozen Musk, Bergamot</p>
-          <div class="flex gap-2">
-            <span class="px-2 py-1 border border-outline-variant text-[10px] uppercase font-label-lg text-on-surface-variant">Floral</span>
-            <span class="px-2 py-1 border border-outline-variant text-[10px] uppercase font-label-lg text-on-surface-variant">Fresh</span>
+      <div class="product-info">
+        <div class="product-brand">Brand Placeholder</div>
+        <div class="product-name">Product Name</div>
+        <div class="product-notes">Note Placeholder</div>
+        <div class="product-footer">
+          <span class="product-price">Price Placeholder</span>
+          <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" style="font-size:9px;padding:7px 14px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+        </div>
+      </div>
+    </div><div class="product-card reveal" data-gender="female" data-type="floral" style="transition-delay:100ms">
+      <div class="product-img-wrap">
+        <a href="product.html" style="display:block;height:100%;text-decoration:none;">
+          <div class="product-img-placeholder"><span>Product Image</span></div>
+          
+          <div class="product-overlay">
+            <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" onclick="event.stopPropagation();return true;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
           </div>
         </a>
       </div>
-
-      <!-- Product 3 -->
-      <div class="reveal-on-scroll group cursor-pointer product-card" data-category="experimental" style="transition-delay:200ms">
-        <a href="product.html">
-          <div class="aspect-[4/5] bg-surface-container-low overflow-hidden mb-6 relative border border-transparent group-hover:border-outline-variant/30 transition-all duration-700">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkEGPx_U0-5ImqV_mKVu_KOvuRG5_FFwApP-28Ogd9Pcc1vgjCXkWTT71k4pLiVbSyJJ46rEqb4Zn_bPRn2FlYgaKp3iUElW5owzU5Frqdei1eRQwFQ6vSmaaDUsrbZ0HEXJtYd4GLDtZR_kt6_s7vcZEk_yX0zpK00IKXIRA9OtZWy7Ga5JEzMJd7tiL7m3u-zk5sdPEKe84akTm6M_oGOZCRNz_5oQd5sw2bJjzAMfZq4ajuAKQS-jkthVUTbFLL0EMFZudYpFFf" alt="Abstract Ink"/>
-            <div class="absolute top-4 left-4">
-              <span class="px-3 py-1 bg-surface-bright border border-outline-variant text-on-surface font-label-lg text-[10px] uppercase tracking-widest">Experimental</span>
-            </div>
-          </div>
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="font-headline-sm text-headline-sm text-on-surface">Abstract Ink</h3>
-            <span class="font-headline-sm text-headline-sm text-primary">$310</span>
-          </div>
-          <p class="font-body-md text-on-surface-variant italic mb-4">Metallic Iris, Smoked Tea, Birch Tar</p>
-          <div class="flex gap-2">
-            <span class="px-2 py-1 border border-outline-variant text-[10px] uppercase font-label-lg text-on-surface-variant">Experimental</span>
-            <span class="px-2 py-1 border border-outline-variant text-[10px] uppercase font-label-lg text-on-surface-variant">Long-lasting</span>
+      <div class="product-info">
+        <div class="product-brand">Brand Placeholder</div>
+        <div class="product-name">Product Name</div>
+        <div class="product-notes">Note Placeholder</div>
+        <div class="product-footer">
+          <span class="product-price">Price Placeholder</span>
+          <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" style="font-size:9px;padding:7px 14px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+        </div>
+      </div>
+    </div><div class="product-card reveal" data-gender="unisex" data-type="oriental" style="transition-delay:200ms">
+      <div class="product-img-wrap">
+        <a href="product.html" style="display:block;height:100%;text-decoration:none;">
+          <div class="product-img-placeholder"><span>Product Image</span></div>
+          <div class="product-badge">New Arrival</div>
+          <div class="product-overlay">
+            <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" onclick="event.stopPropagation();return true;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
           </div>
         </a>
       </div>
-
-      <!-- Product 4 -->
-      <div class="reveal-on-scroll group cursor-pointer product-card" data-category="woody">
-        <a href="product.html">
-          <div class="aspect-[4/5] bg-surface-container-low overflow-hidden mb-6 relative border border-transparent group-hover:border-outline-variant/30 transition-all duration-700">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbEanAR3mm03ch8_6YwvQTN6mAY9_a31BGUz3aEIEBJbvXZBNsmzBh3EDl3ZmaDpDj_qZqbJEH36uskzHYToyCIPc-jtio7RgYBEsgOLlxGrjJBvPDA6fDnfPjlE8NApcLhb67IISCGLuQbhj-NpFy7fYxiz9NtCfVsbpQUcrQYwvgFNh-A1kJ9sYAc8OUlL-7CNqYBK9mvnzyOKBeYmneg-VdYhI5QUs_pZXiRjGqGzScp7NHE8eqj2oSHbz4vzI8c8SuyLYDrIy9" alt="Royal Saffron"/>
-          </div>
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="font-headline-sm text-headline-sm text-on-surface">Royal Saffron</h3>
-            <span class="font-headline-sm text-headline-sm text-primary">$265</span>
-          </div>
-          <p class="font-body-md text-on-surface-variant italic mb-4">Saffron Filaments, Amberwood, Turkish Rose</p>
-          <div class="flex gap-2">
-            <span class="px-2 py-1 border border-outline-variant text-[10px] uppercase font-label-lg text-on-surface-variant">Spicy</span>
-            <span class="px-2 py-1 border border-outline-variant text-[10px] uppercase font-label-lg text-on-surface-variant">Sophisticated</span>
+      <div class="product-info">
+        <div class="product-brand">Brand Placeholder</div>
+        <div class="product-name">Product Name</div>
+        <div class="product-notes">Note Placeholder</div>
+        <div class="product-footer">
+          <span class="product-price">Price Placeholder</span>
+          <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" style="font-size:9px;padding:7px 14px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+        </div>
+      </div>
+    </div><div class="product-card reveal" data-gender="male" data-type="fresh" style="">
+      <div class="product-img-wrap">
+        <a href="product.html" style="display:block;height:100%;text-decoration:none;">
+          <div class="product-img-placeholder"><span>Product Image</span></div>
+          
+          <div class="product-overlay">
+            <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" onclick="event.stopPropagation();return true;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
           </div>
         </a>
       </div>
-
-      <!-- Product 5 -->
-      <div class="reveal-on-scroll group cursor-pointer product-card" data-category="woody" style="transition-delay:100ms">
-        <a href="product.html">
-          <div class="aspect-[4/5] bg-surface-container-low overflow-hidden mb-6 relative border border-transparent group-hover:border-outline-variant/30 transition-all duration-700">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf4wPCG2UjBtm1fSCg3Ycunv0lzJ0bgK_2-5NU5eVhw19W6BnTdgrBh_-x_LRvNB67y3ZxRfRpf4EVqbUwaDTeN3dH5SbUk_8qhoQ8vNzyKWThYBM5uTohqf_E5sr9_A9Z2pjhslcPxtlM4n9Y2P8mwUZrgK86fZBxMS2byEILYNzCjnLvaxjmrLj4OBZReWgvcx0hMK-E5MLv23e9afWL3SkhIgRaSclktyLEpW45D1FFtZLJ_U6b2nVcsWBqrYqekJrsfvj1myTU" alt="Lunar Drift"/>
-            <div class="absolute top-4 left-4">
-              <span class="px-3 py-1 bg-primary text-on-primary font-label-lg text-[10px] uppercase tracking-widest">New Arrival</span>
-            </div>
-          </div>
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="font-headline-sm text-headline-sm text-on-surface">Lunar Drift</h3>
-            <span class="font-headline-sm text-headline-sm text-primary">$240</span>
-          </div>
-          <p class="font-body-md text-on-surface-variant italic mb-4">Sandalwood Mist, Vetiver, Cold Slate</p>
-          <div class="flex gap-2">
-            <span class="px-2 py-1 border border-outline-variant text-[10px] uppercase font-label-lg text-on-surface-variant">Woody</span>
-            <span class="px-2 py-1 border border-outline-variant text-[10px] uppercase font-label-lg text-on-surface-variant">Ethereal</span>
+      <div class="product-info">
+        <div class="product-brand">Brand Placeholder</div>
+        <div class="product-name">Product Name</div>
+        <div class="product-notes">Note Placeholder</div>
+        <div class="product-footer">
+          <span class="product-price">Price Placeholder</span>
+          <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" style="font-size:9px;padding:7px 14px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+        </div>
+      </div>
+    </div><div class="product-card reveal" data-gender="female" data-type="woody" style="transition-delay:100ms">
+      <div class="product-img-wrap">
+        <a href="product.html" style="display:block;height:100%;text-decoration:none;">
+          <div class="product-img-placeholder"><span>Product Image</span></div>
+          <div class="product-badge">Limited</div>
+          <div class="product-overlay">
+            <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" onclick="event.stopPropagation();return true;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
           </div>
         </a>
       </div>
-
-      <!-- Product 6 -->
-      <div class="reveal-on-scroll group cursor-pointer product-card" data-category="floral" style="transition-delay:200ms">
-        <a href="product.html">
-          <div class="aspect-[4/5] bg-surface-container-low overflow-hidden mb-6 relative border border-transparent group-hover:border-outline-variant/30 transition-all duration-700">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm7ErTbd3255YLSWHd9ZoF7gfMC6NTQw_xlVQqo65Fz3SANq1CQ01smKw0iVfJ_UWL95IyQpFPyBemV5gjr7nnjzp6-NHURLgbEY8vTgM7z5nQLwhafBQDu2gCa1h40G8yqzuW8oehqIn88IE1C3KDTN1GcAgKzsEckO8yZwvgtv5SvRUKimbDIY-8MF3C0qlYuKRfr6pOGF7lKVRKxaUZ6cvFYThO-2XL1ZBalq07e6gb0uUDFyY8H9yN1ha-cp-Y-dJ4XNMXZgYM" alt="Velvet Night"/>
-          </div>
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="font-headline-sm text-headline-sm text-on-surface">Velvet Night</h3>
-            <span class="font-headline-sm text-headline-sm text-primary">$215</span>
-          </div>
-          <p class="font-body-md text-on-surface-variant italic mb-4">Damask Rose, Patchouli, Vanilla Absolute</p>
-          <div class="flex gap-2">
-            <span class="px-2 py-1 border border-outline-variant text-[10px] uppercase font-label-lg text-on-surface-variant">Floral</span>
-            <span class="px-2 py-1 border border-outline-variant text-[10px] uppercase font-label-lg text-on-surface-variant">Romantic</span>
+      <div class="product-info">
+        <div class="product-brand">Brand Placeholder</div>
+        <div class="product-name">Product Name</div>
+        <div class="product-notes">Note Placeholder</div>
+        <div class="product-footer">
+          <span class="product-price">Price Placeholder</span>
+          <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" style="font-size:9px;padding:7px 14px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+        </div>
+      </div>
+    </div><div class="product-card reveal" data-gender="unisex" data-type="experimental" style="transition-delay:200ms">
+      <div class="product-img-wrap">
+        <a href="product.html" style="display:block;height:100%;text-decoration:none;">
+          <div class="product-img-placeholder"><span>Product Image</span></div>
+          
+          <div class="product-overlay">
+            <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" onclick="event.stopPropagation();return true;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
           </div>
         </a>
       </div>
-    </div>
-
-    <!-- Load More -->
-    <div class="mt-24 flex justify-center">
-      <button class="flex items-center gap-4 group">
-        <span class="font-label-lg text-label-lg text-primary uppercase tracking-[0.2em] group-hover:pr-4 transition-all duration-500">View More Fragrances</span>
-        <span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform duration-500">arrow_forward</span>
-      </button>
-    </div>
-  </section>
-
-  <!-- Scent Quiz CTA -->
-  <section class="bg-surface-container-low py-section-gap overflow-hidden relative">
-    <div class="absolute right-0 top-0 h-full w-1/2 opacity-20 hidden lg:block">
-      <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAScTXoMAyoXEMTDcYhsYXqwik4L1_goFy8Ss6ilchN-PhLoFL8n45YbZIaSmgtDqoG7keF_2Y9q7vgtfyXRKuLKjK6Of4Ah2RIhYsnLYKmA5sSJlfZkO8IaidggyY4LL310wRP6zCX1kYCIe477WmLSVXhwXbdWSYAtXe_dyYPmoW4puhaovzRjtROF_k1SWiyPg2WSn0XEXa3tDKm6-ggm0nRVUjfrcPFeL3QAgUIzzsbxSGKjU3Nz61agYWbEztzMze2Iiwrzh-x" alt="Background detail"/>
-    </div>
-    <div class="px-margin-desktop max-w-container-max mx-auto relative z-10">
-      <div class="max-w-xl">
-        <h2 class="font-display-lg text-headline-lg text-on-surface mb-6 italic">Not Sure Where to Start?</h2>
-        <p class="font-body-lg text-body-lg text-on-surface-variant mb-12">Our bespoke scent profile quiz analyzes your preferences and recommends fragrances tailored to your unique essence — so you order with confidence.</p>
-        <div class="flex flex-col sm:flex-row gap-6">
-          <button class="px-10 py-4 bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-[0.2em] hover:bg-primary-fixed transition-colors">Take the Quiz</button>
-          <button class="px-10 py-4 border border-outline-variant text-on-surface font-label-lg text-label-lg uppercase tracking-[0.2em] hover:border-primary transition-colors">How it works</button>
+      <div class="product-info">
+        <div class="product-brand">Brand Placeholder</div>
+        <div class="product-name">Product Name</div>
+        <div class="product-notes">Note Placeholder</div>
+        <div class="product-footer">
+          <span class="product-price">Price Placeholder</span>
+          <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" style="font-size:9px;padding:7px 14px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+        </div>
+      </div>
+    </div><div class="product-card reveal" data-gender="female" data-type="floral" style="">
+      <div class="product-img-wrap">
+        <a href="product.html" style="display:block;height:100%;text-decoration:none;">
+          <div class="product-img-placeholder"><span>Product Image</span></div>
+          
+          <div class="product-overlay">
+            <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" onclick="event.stopPropagation();return true;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+          </div>
+        </a>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Brand Placeholder</div>
+        <div class="product-name">Product Name</div>
+        <div class="product-notes">Note Placeholder</div>
+        <div class="product-footer">
+          <span class="product-price">Price Placeholder</span>
+          <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" style="font-size:9px;padding:7px 14px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+        </div>
+      </div>
+    </div><div class="product-card reveal" data-gender="male" data-type="oriental" style="transition-delay:100ms">
+      <div class="product-img-wrap">
+        <a href="product.html" style="display:block;height:100%;text-decoration:none;">
+          <div class="product-img-placeholder"><span>Product Image</span></div>
+          <div class="product-badge">New Arrival</div>
+          <div class="product-overlay">
+            <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" onclick="event.stopPropagation();return true;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+          </div>
+        </a>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Brand Placeholder</div>
+        <div class="product-name">Product Name</div>
+        <div class="product-notes">Note Placeholder</div>
+        <div class="product-footer">
+          <span class="product-price">Price Placeholder</span>
+          <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" style="font-size:9px;padding:7px 14px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+        </div>
+      </div>
+    </div><div class="product-card reveal" data-gender="unisex" data-type="fresh" style="transition-delay:200ms">
+      <div class="product-img-wrap">
+        <a href="product.html" style="display:block;height:100%;text-decoration:none;">
+          <div class="product-img-placeholder"><span>Product Image</span></div>
+          
+          <div class="product-overlay">
+            <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" onclick="event.stopPropagation();return true;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+          </div>
+        </a>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Brand Placeholder</div>
+        <div class="product-name">Product Name</div>
+        <div class="product-notes">Note Placeholder</div>
+        <div class="product-footer">
+          <span class="product-price">Price Placeholder</span>
+          <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" style="font-size:9px;padding:7px 14px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+        </div>
+      </div>
+    </div><div class="product-card reveal" data-gender="female" data-type="woody" style="">
+      <div class="product-img-wrap">
+        <a href="product.html" style="display:block;height:100%;text-decoration:none;">
+          <div class="product-img-placeholder"><span>Product Image</span></div>
+          <div class="product-badge">Bestseller</div>
+          <div class="product-overlay">
+            <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" onclick="event.stopPropagation();return true;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+          </div>
+        </a>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Brand Placeholder</div>
+        <div class="product-name">Product Name</div>
+        <div class="product-notes">Note Placeholder</div>
+        <div class="product-footer">
+          <span class="product-price">Price Placeholder</span>
+          <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" style="font-size:9px;padding:7px 14px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+        </div>
+      </div>
+    </div><div class="product-card reveal" data-gender="male" data-type="experimental" style="transition-delay:100ms">
+      <div class="product-img-wrap">
+        <a href="product.html" style="display:block;height:100%;text-decoration:none;">
+          <div class="product-img-placeholder"><span>Product Image</span></div>
+          
+          <div class="product-overlay">
+            <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" onclick="event.stopPropagation();return true;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+          </div>
+        </a>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Brand Placeholder</div>
+        <div class="product-name">Product Name</div>
+        <div class="product-notes">Note Placeholder</div>
+        <div class="product-footer">
+          <span class="product-price">Price Placeholder</span>
+          <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" style="font-size:9px;padding:7px 14px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+        </div>
+      </div>
+    </div><div class="product-card reveal" data-gender="unisex" data-type="floral" style="transition-delay:200ms">
+      <div class="product-img-wrap">
+        <a href="product.html" style="display:block;height:100%;text-decoration:none;">
+          <div class="product-img-placeholder"><span>Product Image</span></div>
+          
+          <div class="product-overlay">
+            <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" onclick="event.stopPropagation();return true;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+          </div>
+        </a>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Brand Placeholder</div>
+        <div class="product-name">Product Name</div>
+        <div class="product-notes">Note Placeholder</div>
+        <div class="product-footer">
+          <span class="product-price">Price Placeholder</span>
+          <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" style="font-size:9px;padding:7px 14px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
         </div>
       </div>
     </div>
-  </section>
-</main>
+  <div class="no-results" id="no-results">No fragrances found for this selection.</div>
+</div>
 
-<!-- Footer -->
-<footer class="bg-surface-container-lowest border-t border-outline-variant/20">
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-gap w-full max-w-container-max mx-auto">
+<footer>
+  <div class="footer-inner">
     <div>
-      <a class="font-display-lg text-headline-sm text-primary mb-8 block italic" href="index.html">Moonlight Aroma</a>
-      <p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-xs">An online catalog of the world's finest nocturnal fragrances, curated for the discerning collector.</p>
-      <div class="flex gap-6">
-        <span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all cursor-pointer">share</span>
-        <span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all cursor-pointer">public</span>
+      <img src="data:image/jpeg;base64,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" class="footer-logo" alt="Moonlight Aroma Perfumery"/>
+      <p class="footer-desc">Curated luxury fragrances. Contact us on WhatsApp to check availability and place your order.</p>
+      <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20your%20fragrances." class="wa-btn" style="margin-top:24px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp Us</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Shop</div>
+      <div class="footer-links">
+        <a href="collections.html">All Fragrances</a>
+        <a href="collections.html?gender=male">Men</a>
+        <a href="collections.html?gender=female">Women</a>
+        <a href="collections.html">Unisex</a>
       </div>
     </div>
     <div>
-      <h4 class="font-label-lg text-label-lg uppercase text-primary mb-6">Catalog</h4>
-      <ul class="space-y-4">
-        <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-all" href="#">All Fragrances</a></li>
-        <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-all" href="#">New Arrivals</a></li>
-        <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Scent Profiles</a></li>
-        <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Discovery Sets</a></li>
-      </ul>
+      <div class="footer-col-title">Information</div>
+      <div class="footer-links">
+        <a href="scent-stories.html">Stories</a>
+        <a href="#">About Us</a>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Returns</a>
+      </div>
     </div>
     <div>
-      <h4 class="font-label-lg text-label-lg uppercase text-primary mb-6">Support</h4>
-      <ul class="space-y-4">
-        <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Shipping & Returns</a></li>
-        <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Contact Us</a></li>
-        <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Sustainability</a></li>
-        <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Privacy Policy</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="font-label-lg text-label-lg uppercase text-primary mb-6">Newsletter</h4>
-      <p class="font-body-md text-on-surface-variant mb-6">Join our private list for early access to new catalog additions and limited releases.</p>
-      <div class="relative">
-        <input class="w-full bg-transparent border-b border-outline-variant py-2 font-label-lg text-label-lg focus:outline-none focus:border-primary transition-colors text-on-surface uppercase tracking-widest placeholder:text-on-surface-variant/40" placeholder="EMAIL ADDRESS" type="email"/>
-        <button class="absolute right-0 top-1/2 -translate-y-1/2 text-primary font-label-lg text-label-lg uppercase tracking-widest">Join</button>
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-links">
+        <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20your%20fragrances." target="_blank">WhatsApp: +260 XX XXX XXXX</a>
+        <a href="#">Email Placeholder</a>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
       </div>
     </div>
   </div>
-  <div class="px-margin-desktop py-8 border-t border-outline-variant/10 text-center">
-    <p class="font-label-lg text-[11px] text-on-surface-variant tracking-[0.2em]">© 2024 Moonlight Aroma. All Rights Reserved.</p>
+  <div class="footer-bottom">
+    <span>&#169; 2025 Moonlight Aroma Perfumery. All rights reserved.</span>
+    <span>Lusaka, Zambia</span>
   </div>
 </footer>
-
+<a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20a%20fragrance." class="wa-float" title="Chat on WhatsApp" target="_blank">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-  document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+let activeGender='all', activeType='all';
 
-  // Filter logic
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const productCards = document.querySelectorAll('.product-card');
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => {
-        b.classList.remove('border-primary','text-primary');
-        b.classList.add('border-outline-variant','text-on-surface-variant');
-      });
-      btn.classList.add('border-primary','text-primary');
-      btn.classList.remove('border-outline-variant','text-on-surface-variant');
-      const filter = btn.dataset.filter;
-      productCards.forEach(card => {
-        if (filter === 'all' || card.dataset.category === filter) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
+function applyFilters(){
+  const cards=document.querySelectorAll('.product-card');
+  let visible=0;
+  cards.forEach(c=>{
+    const g=c.dataset.gender, t=c.dataset.type;
+    const gMatch=activeGender==='all'||g===activeGender;
+    const tMatch=activeType==='all'||t===activeType;
+    if(gMatch&&tMatch){c.style.display='block';visible++;}
+    else c.style.display='none';
   });
+  document.getElementById('results-count').textContent=visible+' fragrance'+(visible!==1?'s':'');
+  document.getElementById('no-results').style.display=visible===0?'block':'none';
+}
+
+document.querySelectorAll('.gender-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.gender-tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    activeGender=tab.dataset.gender;
+    applyFilters();
+  });
+});
+
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active-type'));
+    btn.classList.add('active-type');
+    activeType=btn.dataset.type;
+    applyFilters();
+  });
+});
+
+// Read URL param on load
+const params=new URLSearchParams(window.location.search);
+const gParam=params.get('gender');
+if(gParam){
+  const tab=document.querySelector('.gender-tab[data-gender="'+gParam+'"]');
+  if(tab){
+    document.querySelectorAll('.gender-tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    activeGender=gParam;
+    applyFilters();
+  }
+}
+
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.06});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>

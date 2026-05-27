@@ -1,291 +1,231 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Scent Stories | Moonlight Aroma</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "surface-container-highest": "#e4e2e2",
-          "on-background": "#1b1c1c",
-          "surface-container-low": "#f5f3f3",
-          "outline-variant": "#c4c7c7",
-          "on-primary": "#ffffff",
-          "surface-bright": "#fbf9f8",
-          "surface": "#fbf9f8",
-          "on-surface-variant": "#444748",
-          "primary-fixed": "#e5e2e1",
-          "surface-container": "#efeded",
-          "surface-container-high": "#e9e8e7",
-          "primary": "#000000",
-          "surface-dim": "#dbdad9",
-          "surface-variant": "#e4e2e2",
-          "secondary-container": "#fed488",
-          "surface-container-lowest": "#ffffff",
-          "secondary": "#775a19",
-          "background": "#fbf9f8",
-          "outline": "#747878",
-          "on-surface": "#1b1c1c",
-          "tertiary": "#000000"
-        },
-        spacing: { "unit": "8px", "margin-mobile": "20px", "gutter": "24px", "margin-desktop": "64px" },
-        fontFamily: {
-          "body-md": ["Manrope"], "label-caps": ["Manrope"], "body-lg": ["Manrope"],
-          "headline-md": ["Bodoni Moda"], "headline-lg-mobile": ["Bodoni Moda"],
-          "display-lg": ["Bodoni Moda"], "headline-lg": ["Bodoni Moda"]
-        },
-        fontSize: {
-          "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-          "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
-          "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-          "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
-          "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-          "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-          "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "600"}]
-        }
-      }
-    }
-  }
-</script>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Fragrance Stories | Moonlight Aroma</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
-  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-  body { background-color: #fbf9f8; color: #1b1c1c; -webkit-font-smoothing: antialiased; }
-  .editorial-rule { height: 0.5px; background-color: rgba(19,19,19,0.2); width: 100%; }
-  .text-justified { text-align: justify; text-justify: inter-word; }
+
+:root{--gold:#c9a84c;--gold-light:#e8c97a;--ink:#0a0a0a;--surface:#111111;--surface-2:#181818;--surface-3:#222222;--text:#e8e4dc;--text-muted:#9a9080;--text-dim:#5a5550;--border:rgba(201,168,76,0.18);--border-dim:rgba(255,255,255,0.07);}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--text);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--ink);}::-webkit-scrollbar-thumb{background:var(--gold);}
+.nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border-dim);}
+.nav-inner{max-width:1360px;margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.logo-img{height:52px;width:auto;}
+.nav-links{display:flex;gap:40px;}
+.nav-links a{font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color 0.3s;border-bottom:1px solid transparent;padding-bottom:2px;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);border-bottom-color:var(--gold);}
+.nav-actions{display:flex;gap:20px;align-items:center;}
+.nav-actions a{background:none;border:none;cursor:pointer;color:var(--text-muted);transition:color 0.3s;text-decoration:none;display:flex;align-items:center;}
+.nav-actions a:hover{color:var(--gold);}
+.wa-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:#25D366;color:white;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;border:none;cursor:pointer;font-family:'Jost',sans-serif;}
+.wa-btn:hover{background:#1fb85a;}
+.wa-btn svg{width:14px;height:14px;flex-shrink:0;}
+.wa-float{position:fixed;bottom:32px;right:32px;z-index:200;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,0.4);text-decoration:none;transition:transform 0.3s;animation:pulse-wa 3s infinite;}
+.wa-float:hover{transform:scale(1.1);}
+.wa-float svg{width:28px;height:28px;}
+@keyframes pulse-wa{0%,100%{box-shadow:0 4px 24px rgba(37,211,102,0.4);}50%{box-shadow:0 4px 40px rgba(37,211,102,0.6);}}
+footer{background:var(--ink);border-top:1px solid var(--border-dim);}
+.footer-inner{max-width:1360px;margin:0 auto;padding:72px 48px 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;}
+.footer-logo{height:52px;width:auto;margin-bottom:20px;display:block;}
+.footer-desc{font-size:13px;color:var(--text-dim);line-height:1.8;max-width:260px;}
+.footer-col-title{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:500;}
+.footer-links{display:flex;flex-direction:column;gap:12px;}
+.footer-links a{font-size:13px;color:var(--text-dim);text-decoration:none;transition:color 0.3s;}
+.footer-links a:hover{color:var(--text);}
+.footer-bottom{border-top:1px solid var(--border-dim);padding:20px 48px;max-width:1360px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--text-dim);letter-spacing:0.08em;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-d1{transition-delay:0.1s;}.reveal-d2{transition-delay:0.2s;}.reveal-d3{transition-delay:0.3s;}
+.btn-primary{padding:14px 40px;background:var(--gold);color:var(--ink);font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:all 0.3s;display:inline-block;}
+.btn-primary:hover{background:var(--gold-light);}
+.btn-outline{padding:14px 40px;background:transparent;color:var(--text);font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border:1px solid var(--border);transition:all 0.3s;cursor:pointer;display:inline-block;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.section-label{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:500;}
+.link-arrow{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;font-weight:500;border-bottom:1px solid var(--text-dim);padding-bottom:2px;transition:all 0.3s;}
+.link-arrow:hover{color:var(--gold);border-color:var(--gold);}
+.product-img-placeholder{width:100%;height:100%;background:linear-gradient(160deg,#1a1a1a 0%,#222 50%,#181818 100%);display:flex;align-items:center;justify-content:center;transition:filter 0.5s;}
+.product-img-placeholder span{font-family:'Cormorant Garamond';font-size:11px;letter-spacing:0.2em;color:var(--text-dim);text-transform:uppercase;}
+@media(max-width:900px){
+  .nav-inner{padding:0 20px;}.nav-links{display:none;}
+  .footer-inner{grid-template-columns:1fr 1fr;}.footer-bottom{flex-direction:column;gap:12px;text-align:center;padding:20px;}
+}
+@media(max-width:560px){.footer-inner{grid-template-columns:1fr;}}
+
+.page-hero{padding:80px 48px 64px;max-width:1360px;margin:0 auto;}
+.page-title{font-size:clamp(40px,6vw,80px);line-height:1.0;letter-spacing:-0.02em;margin-bottom:12px;}
+.page-sub{font-size:15px;color:var(--text-muted);max-width:500px;line-height:1.8;}
+.featured-article{max-width:1360px;margin:0 auto;padding:0 48px 80px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.featured-img{aspect-ratio:16/10;background:linear-gradient(160deg,#1a1a1a,#222,#181818);display:flex;align-items:center;justify-content:center;}
+.featured-img span{font-family:'Cormorant Garamond';font-size:13px;letter-spacing:0.2em;color:var(--text-dim);text-transform:uppercase;}
+.featured-tag{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:500;}
+.featured-title{font-size:clamp(28px,3.5vw,52px);line-height:1.1;margin-bottom:16px;}
+.featured-desc{font-size:15px;color:var(--text-muted);line-height:1.9;margin-bottom:28px;}
+.featured-meta{font-size:11px;color:var(--text-dim);letter-spacing:0.1em;text-transform:uppercase;margin-top:16px;}
+.stories-grid{max-width:1360px;margin:0 auto;padding:0 48px 100px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+.story-card{}
+.story-img{aspect-ratio:4/3;background:linear-gradient(160deg,#1a1a1a,#222,#181818);display:flex;align-items:center;justify-content:center;margin-bottom:20px;overflow:hidden;transition:opacity 0.4s;}
+.story-img:hover{opacity:0.8;cursor:pointer;}
+.story-img span{font-family:'Cormorant Garamond';font-size:11px;letter-spacing:0.2em;color:var(--text-dim);text-transform:uppercase;}
+.story-cat{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:500;}
+.story-title{font-size:22px;font-family:'Cormorant Garamond';line-height:1.2;margin-bottom:10px;}
+.story-desc{font-size:13px;color:var(--text-muted);line-height:1.7;}
+@media(max-width:900px){
+  .featured-article{grid-template-columns:1fr;gap:32px;padding:0 20px 60px;}
+  .stories-grid{grid-template-columns:1fr 1fr;padding:0 20px 80px;gap:28px;}
+  .page-hero{padding:60px 20px 40px;}
+}
+@media(max-width:560px){.stories-grid{grid-template-columns:1fr;}}
 </style>
 </head>
-<body class="text-on-background font-body-md overflow-x-hidden">
-
-<!-- Nav -->
-<nav class="w-full top-0 sticky bg-background border-b border-on-background/10 z-50">
-  <div class="flex justify-between items-center w-full px-margin-desktop py-gutter max-w-[1440px] mx-auto">
-    <div class="flex-1 flex gap-8 items-center">
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md uppercase tracking-widest" href="collections.html">Fragrances</a>
-      <a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md uppercase tracking-widest" href="scent-stories.html">Scent Stories</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md uppercase tracking-widest" href="#">Heritage</a>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html"><img src="data:image/jpeg;base64,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" class="logo-img" alt="Moonlight Aroma Perfumery"/></a>
+    <div class="nav-links">
+      <a href="collections.html" >Collections</a>
+      <a href="scent-stories.html" class="active">Stories</a>
+      <a href="#" >About</a>
+      <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20a%20fragrance.">Contact</a>
     </div>
-    <a class="font-headline-md text-headline-md font-medium text-primary" href="index.html">Moonlight Aroma</a>
-    <div class="flex-1 flex justify-end gap-6 items-center">
-      <button class="hover:opacity-70 transition-opacity"><span class="material-symbols-outlined text-primary">search</span></button>
-      <button class="hover:opacity-70 transition-opacity"><span class="material-symbols-outlined text-primary">shopping_bag</span></button>
+    <div class="nav-actions">
+      <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20a%20fragrance." title="Chat on WhatsApp" target="_blank">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
     </div>
   </div>
 </nav>
-
-<main class="max-w-[1440px] mx-auto px-margin-desktop pt-16 pb-32">
-
-  <!-- Editorial Hero -->
-  <header class="mb-24">
-    <div class="grid grid-cols-12 gap-gutter items-end">
-      <div class="col-span-12 md:col-span-7">
-        <p class="font-label-caps text-label-caps text-secondary mb-4 uppercase">Vol. IV — The Nocturnal Chronicles</p>
-        <h1 class="font-display-lg text-display-lg mb-8 leading-tight">The Art of the <br/><span class="italic font-normal">Midnight Bloom</span></h1>
-      </div>
-      <div class="col-span-12 md:col-span-5 pb-4">
-        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md italic">
-          Exploring the hidden chemistry of flowers that only reveal their true character under the silver gaze of the moon — and how this shapes the fragrances we catalog.
-        </p>
-      </div>
-    </div>
-    <div class="mt-12 w-full aspect-[21/9] overflow-hidden bg-surface-container">
-      <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2000ms]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZLz5i8yhIW2SIolFQ7IkUrk1uwz7vi_odfqKZzTc_JAXKEPylFPSVFClSzIvFn4H8xQjUgVAk9fXTAFb2i0IAGbO6RikXC4_iYkNIUw2YTRkJxxkRHQQVW4ntre0pWN6Df7mjYy2wAcffc1bWvhdxiR6rmKDpBjhRzWEpz2FavArxpMuUWz5V_QSe0kdPsAcc6l-uBV1ZtZx3e1DV91TGz2zoDCq0NURLrZ2iUBxHU3FdPsPBi6wKrDMtdOA4YgzdsyOjqsPThp29" alt="Midnight bloom — editorial photography"/>
-    </div>
-  </header>
-
-  <!-- Article Body -->
-  <section class="grid grid-cols-12 gap-gutter mb-32">
-    <!-- Sidebar -->
-    <aside class="col-span-12 md:col-span-3 border-t border-on-background/10 pt-8">
-      <div class="flex flex-col gap-6">
-        <div>
-          <h4 class="font-label-caps text-label-caps mb-2">WRITTEN BY</h4>
-          <p class="font-body-md text-body-md">Elena Vancore</p>
-        </div>
-        <div>
-          <h4 class="font-label-caps text-label-caps mb-2">PHOTOGRAPHY</h4>
-          <p class="font-body-md text-body-md">Julian Moss</p>
-        </div>
-        <div>
-          <h4 class="font-label-caps text-label-caps mb-2">READ TIME</h4>
-          <p class="font-body-md text-body-md">8 Minutes</p>
-        </div>
-        <div>
-          <h4 class="font-label-caps text-label-caps mb-2">CATEGORY</h4>
-          <p class="font-body-md text-body-md">Ingredient Stories</p>
-        </div>
-      </div>
-    </aside>
-
-    <!-- Main Article -->
-    <article class="col-span-12 md:col-span-6 flex flex-col gap-8">
-      <p class="font-body-lg text-body-lg leading-relaxed text-justified first-letter:text-7xl first-letter:font-headline-lg first-letter:float-left first-letter:mr-4 first-letter:mt-2">
-        Nature possesses a secret rhythm — a temporal alchemy invisible to the casual observer. While the world sleeps, certain species of flora undergo a metamorphosis. Night-blooming cereus, moonflowers, and nocturnal jasmines don't merely open; they exhale. This breath forms the foundation of some of the rarest fragrances in our catalog: scents captured in the liminal space between midnight and dawn.
-      </p>
-      <p class="font-body-lg text-body-lg leading-relaxed text-justified">
-        The chemistry of these blooms is governed by the absence of solar heat. Without the sun to accelerate evaporation, volatile compounds remain concentrated within the heart of each petal, developing a complexity that is impossible to replicate in daylight. It is a cooler, more metallic sweetness — a scent that feels like velvet pulled across cold glass.
-      </p>
-
-      <blockquote class="my-8 py-12 border-y border-on-background/10">
-        <p class="font-headline-md text-headline-md italic text-center px-12">
-          "To capture the midnight bloom is to bottle the silence of the forest at 3:00 AM."
-        </p>
-      </blockquote>
-
-      <p class="font-body-lg text-body-lg leading-relaxed text-justified">
-        The perfumers behind our most acclaimed nocturnal fragrances travel to high plateaus during the lunar peak, using traditional enfleurage techniques to gently extract each essence without harsh solvents. This labor is as much a ritual as it is a science, ensuring that the ethereal quality of the fragrance remains untainted by industrial haste — and that what arrives at your door is the truest possible expression of the night.
-      </p>
-      <p class="font-body-lg text-body-lg leading-relaxed text-justified">
-        When you browse Moonlight Aroma's catalog, each fragrance featuring nocturnal botanicals includes a detailed ingredient provenance card — tracing every bloom from harvest location to bottle. We believe knowing where your scent comes from is as important as knowing how it smells.
-      </p>
-    </article>
-
-    <!-- Sticky Sidebar Product -->
-    <div class="col-span-12 md:col-span-3">
-      <div class="sticky top-32 flex flex-col gap-12">
-        <div class="p-6 bg-surface-container-low border border-outline/10">
-          <img class="w-full aspect-square object-cover mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgUI8BfYIDBhNpPSMrCuHrXj_owY_QFxePevWo8xl5wkf05NTjdU-j8YOkqJs-galzFJickL8yl8DykfvjdMxISTu0clU41GAatjef3CW-TbrGfxi4eFEKj7jUnALC2fPaxxpEmWoV04azryoMDshos6pmJJl6fB5wknNkTezq9ar9jPw4Q9IjQ45MnBhQsHO2IfyvkgeYh0xGmaIJ3Zi-TW37nFat7tqfgcXdzi06lJJzLO5i7bdgty5A8RzqmgC49YAlR3CSGKBU" alt="Featured fragrance from catalog"/>
-          <h5 class="font-label-caps text-label-caps mb-1">FEATURED IN THIS STORY</h5>
-          <p class="font-headline-md text-sm mb-1">Velvet Noir</p>
-          <p class="font-label-caps text-label-caps text-secondary mb-4">$285.00</p>
-          <a href="product.html" class="block w-full bg-primary text-on-primary font-label-caps text-label-caps py-3 hover:opacity-90 transition-opacity text-center uppercase tracking-widest">View in Catalog</a>
-        </div>
+<div class="page-hero reveal">
+  <div class="section-label">Editorial</div>
+  <h1 class="page-title">Fragrance Stories</h1>
+  <p class="page-sub">Guides, ingredient profiles, and fragrance education. Updated regularly.</p>
+</div>
+<div style="max-width:1360px;margin:0 auto;padding:0 48px;"><div style="height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin-bottom:64px;"></div></div>
+<div class="featured-article">
+  <div class="featured-img reveal"><span>Featured Article Image</span></div>
+  <div class="reveal reveal-d1">
+    <div class="featured-tag">Featured Article</div>
+    <h2 class="featured-title">Article Title Placeholder</h2>
+    <p class="featured-desc">Article description placeholder. Replace with a short summary of the article content.</p>
+    <a href="#" class="btn-primary" style="margin-top:8px;">Read Article</a>
+    <div class="featured-meta">Category Placeholder &nbsp;|&nbsp; Read Time Placeholder</div>
+  </div>
+</div>
+<div class="stories-grid">
+  <div class="story-card reveal" style="">
+      <div class="story-img"><span>Article Image</span></div>
+      <div class="story-info">
+        <div class="story-cat">Category Placeholder</div>
+        <h3 class="story-title">Article Title Placeholder</h3>
+        <p class="story-desc">Article description placeholder.</p>
+        <a href="#" class="link-arrow" style="margin-top:16px;display:inline-block;">Read Article</a>
       </div>
     </div>
-  </section>
-
-  <!-- Scent Anatomy Feature -->
-  <section class="bg-surface-container-high py-24 px-0 -mx-margin-desktop mb-32">
-    <div class="max-w-[1440px] mx-auto px-margin-desktop">
-      <div class="text-center mb-16">
-        <h2 class="font-display-lg text-headline-lg mb-6">The Anatomy of Shadow</h2>
-        <div class="editorial-rule max-w-xs mx-auto"></div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
-        <div class="group text-center space-y-6">
-          <div class="aspect-square flex items-center justify-center border border-outline-variant group-hover:border-secondary transition-colors duration-500">
-            <span class="font-display-lg text-display-lg italic opacity-10 group-hover:opacity-100 transition-opacity duration-700 text-secondary">01</span>
-          </div>
-          <h3 class="font-label-caps text-label-caps uppercase tracking-widest">Base: Black Amber</h3>
-          <p class="font-body-md text-on-surface-variant px-4">The architectural foundation. Dense, resinous, and lingering — the signature that stays on your skin long after the night has ended.</p>
-        </div>
-        <div class="group text-center space-y-6 md:translate-y-12">
-          <div class="aspect-square flex items-center justify-center border border-outline-variant group-hover:border-secondary transition-colors duration-500">
-            <span class="font-display-lg text-display-lg italic opacity-10 group-hover:opacity-100 transition-opacity duration-700 text-secondary">02</span>
-          </div>
-          <h3 class="font-label-caps text-label-caps uppercase tracking-widest">Heart: Midnight Jasmine</h3>
-          <p class="font-body-md text-on-surface-variant px-4">The emotional center. Sweet yet dangerous — harvested at 2AM when olfactory concentration is at its absolute peak.</p>
-        </div>
-        <div class="group text-center space-y-6">
-          <div class="aspect-square flex items-center justify-center border border-outline-variant group-hover:border-secondary transition-colors duration-500">
-            <span class="font-display-lg text-display-lg italic opacity-10 group-hover:opacity-100 transition-opacity duration-700 text-secondary">03</span>
-          </div>
-          <h3 class="font-label-caps text-label-caps uppercase tracking-widest">Top: Silver Mist</h3>
-          <p class="font-body-md text-on-surface-variant px-4">The first impression. Cold, metallic, and sharp — a prelude to the warmth and depth that follows in the heart and base.</p>
-        </div>
+  <div class="story-card reveal" style="transition-delay:100ms">
+      <div class="story-img"><span>Article Image</span></div>
+      <div class="story-info">
+        <div class="story-cat">Category Placeholder</div>
+        <h3 class="story-title">Article Title Placeholder</h3>
+        <p class="story-desc">Article description placeholder.</p>
+        <a href="#" class="link-arrow" style="margin-top:16px;display:inline-block;">Read Article</a>
       </div>
     </div>
-  </section>
-
-  <!-- Pull Quote -->
-  <section class="py-16 mb-32 relative overflow-hidden">
-    <div class="absolute right-0 top-0 opacity-5 -translate-y-1/2">
-      <span class="font-display-lg text-[300px] italic select-none text-on-background">Scent</span>
-    </div>
-    <div class="w-full max-w-3xl mx-auto text-center">
-      <blockquote class="font-display-lg text-headline-lg italic leading-tight mb-12">
-        "A perfume is like a piece of clothing, a message, a way of presenting oneself — a costume that changes according to the person who wears it."
-      </blockquote>
-      <div class="font-label-caps text-label-caps uppercase text-secondary tracking-[0.3em]">Paloma Picasso</div>
-    </div>
-  </section>
-
-  <!-- Further Stories -->
-  <section class="border-t border-on-background/20 pt-16">
-    <div class="flex justify-between items-end mb-16">
-      <div>
-        <h2 class="font-headline-lg text-headline-lg">Further Narratives</h2>
-        <p class="font-body-md text-body-md text-on-surface-variant">More stories from the Moonlight Aroma catalog archive.</p>
-      </div>
-      <a class="font-label-caps text-label-caps border-b border-primary pb-1 hover:opacity-70 transition-opacity" href="#">View All Stories</a>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-      <div class="group cursor-pointer">
-        <div class="aspect-[4/5] overflow-hidden bg-surface-container mb-6">
-          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQT3s10YS83PdWlx9nv33-Bl-VlVT7zRkvL9Y3WxkOUXFdcmpgQJY0tga3_DcFs6IMjDSlFzBGZyaN9RZQSzEmrhydKBATsN79RjrAaMSAWER0CDfn4zGq-x4nuX3gufL9wUWkDdF5YCZm0AAqErXM7ShWZehsE387N2z0Xx_5Fwm0lg3yV4Sr7uH_vFfGwwtFOojrYexq8vyCNiKeWKRoVpgb183wpYKfmF_5MYfR6_05_Ix5IyemRdBO36y568WZRpKjgJ_67e9-" alt="Story: The Architecture of Scent"/>
-        </div>
-        <p class="font-label-caps text-label-caps text-secondary mb-2">INGREDIENT SOURCING</p>
-        <h3 class="font-headline-md text-headline-md mb-3 leading-tight group-hover:italic transition-all">Sourcing Oud: A Journey to Laos</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">How our catalog partners travel to Southeast Asian forests to ethically source agarwood for the finest oud fragrances.</p>
-      </div>
-      <div class="group cursor-pointer">
-        <div class="aspect-[4/5] overflow-hidden bg-surface-container mb-6">
-          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsG9wFoy4WkFCG0uNbyFocXUJoyUnMmLbEL7Xc0qy-fLCNhuok40hYUVVO1t5uT1uEcTGSWo0-glmf2r9hvsl3654SQ67YhcVqyhY5sLnjaRgnQaaw-Y6YxJDDQHZwe5mqSf4OGsPUmY_WZqnIwixN4qlv5kB79XIGbmTaCODXS0Htw1PL512UnBlG3V31yL3pWWQxw9jfJYOexM6AcoKUb5swjdNC-BqrH61KfIleu3dNkoCm-PKGsny_ErwOnFMYyDD-53hir4FT" alt="Story: Seasonal Distillations"/>
-        </div>
-        <p class="font-label-caps text-label-caps text-secondary mb-2">PROCESS</p>
-        <h3 class="font-headline-md text-headline-md mb-3 leading-tight group-hover:italic transition-all">Seasonal Distillations: Spring in Grasse</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">A photographic journey through our perfumer partners' spring harvest in the world's fragrance capital.</p>
-      </div>
-      <div class="group cursor-pointer">
-        <div class="aspect-[4/5] overflow-hidden bg-surface-container mb-6">
-          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgEVi6UNd2HtOGj6dB_OYHbi06nRq_ngx_SQCov56TMTmsJBOaXuQyYE6tYA98rfq57Td8vkRvhY7n8PBrw7U0u89uQzQOWZuHB44I6xdmXD34Z3ooHdrAaSA4wlrTavGi59pCdNM3_bfX67M67oRSKmIwtPH91yYbIuR-ORpuC5i8XPcv2EieEq7dMTU-kyEnh10b-7V73NBDBbd0gKaROIedv_YmFsHgRutc6VYf1VF1mtJWgin0NCuAtE1G9UkRt5FblLOMTkkO" alt="Story: The Alchemist's Table"/>
-        </div>
-        <p class="font-label-caps text-label-caps text-secondary mb-2">CRAFT</p>
-        <h3 class="font-headline-md text-headline-md mb-3 leading-tight group-hover:italic transition-all">How to Read a Fragrance: A Buyer's Guide</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Understanding top, heart, and base notes so you can confidently choose your next fragrance from our online catalog.</p>
+  <div class="story-card reveal" style="transition-delay:200ms">
+      <div class="story-img"><span>Article Image</span></div>
+      <div class="story-info">
+        <div class="story-cat">Category Placeholder</div>
+        <h3 class="story-title">Article Title Placeholder</h3>
+        <p class="story-desc">Article description placeholder.</p>
+        <a href="#" class="link-arrow" style="margin-top:16px;display:inline-block;">Read Article</a>
       </div>
     </div>
-  </section>
-
-  <!-- Newsletter -->
-  <section class="mt-40 bg-surface-container-low p-16 text-center">
-    <h2 class="font-headline-lg text-headline-lg mb-4">Join the Narrative</h2>
-    <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-xl mx-auto">
-      Receive our quarterly scent stories, new catalog additions, and exclusive fragrance guides delivered to your inbox.
-    </p>
-    <form class="max-w-md mx-auto flex gap-0 border-b border-primary">
-      <input class="bg-transparent border-none focus:ring-0 w-full font-label-caps text-label-caps py-4 placeholder:text-on-surface-variant/50" placeholder="YOUR EMAIL ADDRESS" type="email"/>
-      <button class="font-label-caps text-label-caps px-4 py-4 hover:opacity-70 transition-opacity uppercase" type="submit">Subscribe</button>
-    </form>
-  </section>
-</main>
-
-<!-- Footer -->
-<footer class="w-full mt-auto bg-surface-container-low border-t border-on-background/20">
-  <div class="flex flex-col items-center justify-center w-full px-margin-desktop py-16 gap-unit">
-    <a class="font-headline-lg text-headline-lg text-primary mb-8" href="index.html">Moonlight Aroma</a>
-    <div class="flex flex-wrap justify-center gap-8 mb-12">
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Sustainability</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Shipping & Returns</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Privacy Policy</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Contact</a>
+  <div class="story-card reveal" style="">
+      <div class="story-img"><span>Article Image</span></div>
+      <div class="story-info">
+        <div class="story-cat">Category Placeholder</div>
+        <h3 class="story-title">Article Title Placeholder</h3>
+        <p class="story-desc">Article description placeholder.</p>
+        <a href="#" class="link-arrow" style="margin-top:16px;display:inline-block;">Read Article</a>
+      </div>
     </div>
-    <p class="font-label-caps text-label-caps text-on-surface-variant/60">© 2024 Moonlight Aroma. All rights reserved.</p>
+  <div class="story-card reveal" style="transition-delay:100ms">
+      <div class="story-img"><span>Article Image</span></div>
+      <div class="story-info">
+        <div class="story-cat">Category Placeholder</div>
+        <h3 class="story-title">Article Title Placeholder</h3>
+        <p class="story-desc">Article description placeholder.</p>
+        <a href="#" class="link-arrow" style="margin-top:16px;display:inline-block;">Read Article</a>
+      </div>
+    </div>
+  <div class="story-card reveal" style="transition-delay:200ms">
+      <div class="story-img"><span>Article Image</span></div>
+      <div class="story-info">
+        <div class="story-cat">Category Placeholder</div>
+        <h3 class="story-title">Article Title Placeholder</h3>
+        <p class="story-desc">Article description placeholder.</p>
+        <a href="#" class="link-arrow" style="margin-top:16px;display:inline-block;">Read Article</a>
+      </div>
+    </div>
+</div>
+<div style="max-width:1360px;margin:0 auto;padding:0 48px 100px;">
+  <div style="background:var(--surface-2);border:1px solid var(--border-dim);padding:56px;text-align:center;" class="reveal">
+    <div class="section-label">Need Help?</div>
+    <h2 style="font-size:clamp(28px,4vw,48px);margin-bottom:12px;">Chat With Us</h2>
+    <p style="font-size:15px;color:var(--text-muted);max-width:400px;margin:0 auto 32px;line-height:1.8;">We can help you find the right fragrance for any occasion.</p>
+    <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20help%20choosing%20a%20fragrance." class="wa-btn" style="font-size:11px;padding:14px 36px;display:inline-flex;" target="_blank">
+      <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Chat on WhatsApp
+    </a>
+  </div>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <img src="data:image/jpeg;base64,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" class="footer-logo" alt="Moonlight Aroma Perfumery"/>
+      <p class="footer-desc">Curated luxury fragrances. Contact us on WhatsApp to check availability and place your order.</p>
+      <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20your%20fragrances." class="wa-btn" style="margin-top:24px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp Us</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Shop</div>
+      <div class="footer-links">
+        <a href="collections.html">All Fragrances</a>
+        <a href="collections.html?gender=male">Men</a>
+        <a href="collections.html?gender=female">Women</a>
+        <a href="collections.html">Unisex</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Information</div>
+      <div class="footer-links">
+        <a href="scent-stories.html">Stories</a>
+        <a href="#">About Us</a>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Returns</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-links">
+        <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20your%20fragrances." target="_blank">WhatsApp: +260 XX XXX XXXX</a>
+        <a href="#">Email Placeholder</a>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&#169; 2025 Moonlight Aroma Perfumery. All rights reserved.</span>
+    <span>Lusaka, Zambia</span>
   </div>
 </footer>
-
+<a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20a%20fragrance." class="wa-float" title="Chat on WhatsApp" target="_blank">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('opacity-100', 'translate-y-0');
-          entry.target.classList.remove('opacity-0', 'translate-y-10');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('article, section, .group').forEach(el => {
-      el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
-      observer.observe(el);
-    });
-  });
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.06});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>

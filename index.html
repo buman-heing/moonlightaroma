@@ -1,290 +1,371 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Moonlight Aroma | The Alchemy of Night</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Hanken+Grotesk:wght@100..900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "primary-fixed-dim": "#e9c176",
-          "surface": "#131313",
-          "inverse-surface": "#e5e2e1",
-          "surface-bright": "#3a3939",
-          "on-surface-variant": "#d1c5b4",
-          "surface-container-high": "#2a2a2a",
-          "surface-tint": "#e9c176",
-          "on-secondary-container": "#b7b5b0",
-          "primary-fixed": "#ffdea5",
-          "surface-container": "#201f1f",
-          "on-primary": "#412d00",
-          "surface-container-low": "#1c1b1b",
-          "primary-container": "#c5a059",
-          "on-background": "#e5e2e1",
-          "surface-container-highest": "#353534",
-          "outline-variant": "#4e4639",
-          "inverse-on-surface": "#313030",
-          "on-primary-container": "#4e3700",
-          "secondary": "#c9c6c2",
-          "inverse-primary": "#775a19",
-          "background": "#131313",
-          "tertiary": "#c8c6c6",
-          "on-surface": "#e5e2e1",
-          "outline": "#9a8f80",
-          "on-primary-fixed": "#261900",
-          "primary": "#e9c176",
-          "secondary-container": "#474743",
-          "error": "#ffb4ab",
-          "surface-dim": "#131313",
-          "surface-variant": "#353534",
-          "surface-container-lowest": "#0e0e0e"
-        },
-        spacing: {
-          "container-max": "1280px",
-          "margin-desktop": "80px",
-          "section-gap": "120px",
-          "margin-mobile": "20px",
-          "gutter": "24px"
-        },
-        fontFamily: {
-          "display-lg": ["Bodoni Moda"],
-          "headline-lg": ["Bodoni Moda"],
-          "body-md": ["Hanken Grotesk"],
-          "headline-md": ["Bodoni Moda"],
-          "body-lg": ["Hanken Grotesk"],
-          "label-lg": ["Hanken Grotesk"],
-          "headline-sm": ["Bodoni Moda"],
-          "headline-lg-mobile": ["Bodoni Moda"]
-        },
-        fontSize: {
-          "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-          "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
-          "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-          "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
-          "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
-          "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600"}],
-          "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
-          "headline-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "500"}]
-        }
-      }
-    }
-  }
-</script>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Moonlight Aroma Perfumery</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
-  .glass-nav { background: rgba(19,19,19,0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
-  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-  .hero-gradient { background: linear-gradient(to bottom, rgba(19,19,19,0) 0%, rgba(19,19,19,0.8) 70%, rgba(19,19,19,1) 100%); }
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #0e0e0e; }
-  ::-webkit-scrollbar-thumb { background: #4e4639; }
-  ::-webkit-scrollbar-thumb:hover { background: #e9c176; }
+
+:root{--gold:#c9a84c;--gold-light:#e8c97a;--ink:#0a0a0a;--surface:#111111;--surface-2:#181818;--surface-3:#222222;--text:#e8e4dc;--text-muted:#9a9080;--text-dim:#5a5550;--border:rgba(201,168,76,0.18);--border-dim:rgba(255,255,255,0.07);}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--text);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--ink);}::-webkit-scrollbar-thumb{background:var(--gold);}
+.nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border-dim);}
+.nav-inner{max-width:1360px;margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.logo-img{height:52px;width:auto;}
+.nav-links{display:flex;gap:40px;}
+.nav-links a{font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color 0.3s;border-bottom:1px solid transparent;padding-bottom:2px;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);border-bottom-color:var(--gold);}
+.nav-actions{display:flex;gap:20px;align-items:center;}
+.nav-actions a{background:none;border:none;cursor:pointer;color:var(--text-muted);transition:color 0.3s;text-decoration:none;display:flex;align-items:center;}
+.nav-actions a:hover{color:var(--gold);}
+.wa-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:#25D366;color:white;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;border:none;cursor:pointer;font-family:'Jost',sans-serif;}
+.wa-btn:hover{background:#1fb85a;}
+.wa-btn svg{width:14px;height:14px;flex-shrink:0;}
+.wa-float{position:fixed;bottom:32px;right:32px;z-index:200;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,0.4);text-decoration:none;transition:transform 0.3s;animation:pulse-wa 3s infinite;}
+.wa-float:hover{transform:scale(1.1);}
+.wa-float svg{width:28px;height:28px;}
+@keyframes pulse-wa{0%,100%{box-shadow:0 4px 24px rgba(37,211,102,0.4);}50%{box-shadow:0 4px 40px rgba(37,211,102,0.6);}}
+footer{background:var(--ink);border-top:1px solid var(--border-dim);}
+.footer-inner{max-width:1360px;margin:0 auto;padding:72px 48px 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;}
+.footer-logo{height:52px;width:auto;margin-bottom:20px;display:block;}
+.footer-desc{font-size:13px;color:var(--text-dim);line-height:1.8;max-width:260px;}
+.footer-col-title{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:500;}
+.footer-links{display:flex;flex-direction:column;gap:12px;}
+.footer-links a{font-size:13px;color:var(--text-dim);text-decoration:none;transition:color 0.3s;}
+.footer-links a:hover{color:var(--text);}
+.footer-bottom{border-top:1px solid var(--border-dim);padding:20px 48px;max-width:1360px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--text-dim);letter-spacing:0.08em;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-d1{transition-delay:0.1s;}.reveal-d2{transition-delay:0.2s;}.reveal-d3{transition-delay:0.3s;}
+.btn-primary{padding:14px 40px;background:var(--gold);color:var(--ink);font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:all 0.3s;display:inline-block;}
+.btn-primary:hover{background:var(--gold-light);}
+.btn-outline{padding:14px 40px;background:transparent;color:var(--text);font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border:1px solid var(--border);transition:all 0.3s;cursor:pointer;display:inline-block;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.section-label{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:500;}
+.link-arrow{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;font-weight:500;border-bottom:1px solid var(--text-dim);padding-bottom:2px;transition:all 0.3s;}
+.link-arrow:hover{color:var(--gold);border-color:var(--gold);}
+.product-img-placeholder{width:100%;height:100%;background:linear-gradient(160deg,#1a1a1a 0%,#222 50%,#181818 100%);display:flex;align-items:center;justify-content:center;transition:filter 0.5s;}
+.product-img-placeholder span{font-family:'Cormorant Garamond';font-size:11px;letter-spacing:0.2em;color:var(--text-dim);text-transform:uppercase;}
+@media(max-width:900px){
+  .nav-inner{padding:0 20px;}.nav-links{display:none;}
+  .footer-inner{grid-template-columns:1fr 1fr;}.footer-bottom{flex-direction:column;gap:12px;text-align:center;padding:20px;}
+}
+@media(max-width:560px){.footer-inner{grid-template-columns:1fr;}}
+
+.hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0a0a0a 0%,#1a1208 50%,#0a0a0a 100%);}
+.hero-grain{position:absolute;inset:0;opacity:0.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;}
+.hero-orb-1{width:600px;height:600px;background:rgba(201,168,76,0.07);top:10%;left:20%;}
+.hero-orb-2{width:400px;height:400px;background:rgba(201,168,76,0.05);bottom:15%;right:15%;}
+.hero-content{position:relative;z-index:2;text-align:center;padding:0 24px;max-width:820px;}
+.hero-eyebrow{font-size:10px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;font-weight:500;opacity:0;animation:fadeUp 1s 0.3s forwards;}
+.hero-title{font-size:clamp(52px,8vw,100px);line-height:1.0;letter-spacing:-0.02em;color:var(--text);margin-bottom:16px;opacity:0;animation:fadeUp 1s 0.5s forwards;}
+.hero-title em{color:var(--gold-light);font-style:italic;}
+.hero-sub{font-size:15px;color:var(--text-muted);font-weight:300;letter-spacing:0.05em;margin-bottom:48px;line-height:1.8;opacity:0;animation:fadeUp 1s 0.7s forwards;}
+.hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp 1s 0.9s forwards;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.section{max-width:1360px;margin:0 auto;padding:100px 48px;}
+.section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;flex-wrap:wrap;gap:24px;}
+.section-title{font-size:clamp(32px,4vw,52px);line-height:1.1;}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.product-card{background:var(--surface-2);cursor:pointer;}
+.product-card:hover .product-img-placeholder{filter:brightness(0.7);}
+.product-card:hover .product-overlay{opacity:1;}
+.product-img-wrap{aspect-ratio:3/4;overflow:hidden;position:relative;}
+.product-overlay{position:absolute;inset:0;background:rgba(10,10,10,0.5);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.4s;}
+.product-badge{position:absolute;top:20px;left:20px;background:var(--gold);color:var(--ink);font-size:9px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;padding:5px 12px;}
+.product-info{padding:20px 0;}
+.product-brand{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim);margin-bottom:6px;}
+.product-name{font-size:22px;font-family:'Cormorant Garamond';margin-bottom:4px;}
+.product-notes{font-size:13px;color:var(--text-muted);margin-bottom:12px;font-style:italic;}
+.product-footer{display:flex;justify-content:space-between;align-items:center;}
+.product-price{font-size:14px;color:var(--gold);}
+.info-band{background:var(--surface-2);border-top:1px solid var(--border-dim);border-bottom:1px solid var(--border-dim);}
+.info-band-inner{max-width:1360px;margin:0 auto;padding:28px 48px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.info-item{display:flex;align-items:center;gap:14px;}
+.info-icon{font-size:20px;color:var(--gold);}
+.info-title{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2px;}
+.info-desc{font-size:12px;color:var(--text-muted);}
+.gender-split{max-width:1360px;margin:0 auto;padding:0 48px 100px;display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.gender-tile{position:relative;aspect-ratio:4/3;background:var(--surface-2);display:flex;align-items:flex-end;overflow:hidden;text-decoration:none;cursor:pointer;}
+.gender-tile:hover .gender-tile-bg{transform:scale(1.05);opacity:0.5;}
+.gender-tile-bg{position:absolute;inset:0;background:linear-gradient(160deg,#1a1a1a,#252525);transition:transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94),opacity 0.5s;opacity:0.6;}
+.gender-tile-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.8) 0%,transparent 60%);}
+.gender-tile-content{position:relative;z-index:2;padding:36px;}
+.gender-tile-label{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:500;display:block;}
+.gender-tile-title{font-size:clamp(32px,4vw,52px);color:var(--text);font-family:'Cormorant Garamond';line-height:1;}
+.gender-tile-cta{margin-top:16px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);border-bottom:1px solid var(--text-dim);padding-bottom:2px;display:inline-block;transition:all 0.3s;font-family:'Jost';font-weight:500;}
+.gender-tile:hover .gender-tile-cta{color:var(--gold);border-color:var(--gold);}
+.cta-band{background:var(--surface-2);border-top:1px solid var(--border-dim);padding:80px 48px;text-align:center;}
+.cta-band h2{font-size:clamp(32px,5vw,64px);margin-bottom:16px;}
+.cta-band p{font-size:15px;color:var(--text-muted);max-width:480px;margin:0 auto 40px;line-height:1.8;}
+@media(max-width:900px){
+  .section{padding:64px 20px;}.product-grid{grid-template-columns:1fr 1fr;}
+  .info-band-inner{grid-template-columns:1fr 1fr;padding:20px;}
+  .gender-split{grid-template-columns:1fr;padding:0 20px 80px;}
+  .gender-tile{aspect-ratio:3/2;}
+  .cta-band{padding:60px 20px;}.hero-ctas{flex-direction:column;align-items:center;}
+  .section-header{flex-direction:column;align-items:flex-start;}
+}
+@media(max-width:560px){.product-grid{grid-template-columns:1fr;}.info-band-inner{grid-template-columns:1fr;}}
 </style>
 </head>
-<body class="bg-background text-on-surface font-body-md selection:bg-primary/30">
-
-<!-- TopNavBar -->
-<nav class="top-0 z-50 sticky glass-nav border-b border-outline-variant/30">
-  <div class="flex justify-between items-center px-6 md:px-margin-desktop py-6 w-full max-w-container-max mx-auto">
-    <a class="font-display-lg text-headline-md tracking-tighter italic text-primary" href="index.html">Moonlight Aroma</a>
-    <div class="hidden md:flex gap-10 items-center">
-      <a class="font-label-lg text-label-lg uppercase tracking-[0.2em] text-primary border-b border-primary pb-1" href="collections.html">Collections</a>
-      <a class="font-label-lg text-label-lg uppercase tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-300" href="scent-stories.html">Scent Stories</a>
-      <a class="font-label-lg text-label-lg uppercase tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Heritage</a>
-      <a class="font-label-lg text-label-lg uppercase tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html"><img src="data:image/jpeg;base64,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" class="logo-img" alt="Moonlight Aroma Perfumery"/></a>
+    <div class="nav-links">
+      <a href="collections.html" >Collections</a>
+      <a href="scent-stories.html" >Stories</a>
+      <a href="#" >About</a>
+      <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20a%20fragrance.">Contact</a>
     </div>
-    <div class="flex items-center gap-6 text-on-surface-variant">
-      <button class="scale-100 active:scale-95 transition-transform hover:text-primary duration-500">
-        <span class="material-symbols-outlined">shopping_bag</span>
-      </button>
-      <button class="scale-100 active:scale-95 transition-transform hover:text-primary duration-500">
-        <span class="material-symbols-outlined">person</span>
-      </button>
-      <button class="md:hidden">
-        <span class="material-symbols-outlined">menu</span>
-      </button>
+    <div class="nav-actions">
+      <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20a%20fragrance." title="Chat on WhatsApp" target="_blank">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
     </div>
   </div>
 </nav>
-
-<main>
-  <!-- Hero Section -->
-  <section class="relative h-screen w-full overflow-hidden flex items-center justify-center">
-    <div class="absolute inset-0 z-0">
-      <img alt="Moonlight Aroma hero — luxury perfume bottle under cinematic moonlight" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc3op8jUwJV06lvlblCkao2qj72VOwStEcWDIYQPBhYzLp9Xc29VYVnUJC07dQf07JsVxncWWSyjGbwmLhUsti37Np54H0oVzUkU1RZEpWgpXVQKwObjSusucIDDQUtG2KkqK7h9lubPetmWmJPA_TfJ2MJzNaaFPKlACI6-w7Vpx5bMtUm2usGFH5HABEnGMH0Oz6cIsVxsF6-pBhydY40ED2_cQ4GJOEmrAogxyqjBpHE0FVvGiAJrtimR5zzL5mw3qpoL8PHb7_"/>
-      <div class="absolute inset-0 hero-gradient"></div>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Luxury Fragrance Reseller</div>
+    <h1 class="hero-title">Rare Scents,<br/><em>Curated for You</em></h1>
+    <p class="hero-sub">Premium fragrances from the world's leading houses. Available to order via WhatsApp.</p>
+    <div class="hero-ctas">
+      <a href="collections.html" class="btn-primary">View Collections</a>
+      <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20your%20fragrances." class="btn-outline" target="_blank">WhatsApp Us</a>
     </div>
-    <div class="relative z-10 text-center px-margin-mobile md:px-0">
-      <span class="font-label-lg text-label-lg uppercase tracking-[0.4em] text-primary mb-6 block opacity-0 translate-y-4 transition-all duration-1000 ease-out delay-200" id="hero-subtitle">Online Fragrance Catalog</span>
-      <h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-8 opacity-0 translate-y-4 transition-all duration-1000 ease-out delay-500" id="hero-title">The Alchemy of Night</h1>
-      <p class="font-body-lg text-on-surface-variant mb-10 max-w-lg mx-auto opacity-0 translate-y-4 transition-all duration-1000 ease-out delay-600" id="hero-sub">Rare fragrances distilled from the world's most elusive nocturnal ingredients. Discover your signature scent.</p>
-      <div class="flex justify-center opacity-0 translate-y-4 transition-all duration-1000 ease-out delay-700" id="hero-cta">
-        <a href="collections.html" class="bg-primary text-on-primary-fixed px-12 py-5 font-label-lg text-label-lg uppercase tracking-widest active:scale-95 transition-transform hover:bg-primary-fixed">
-          Browse the Collection
+  </div>
+</section>
+
+<div class="info-band">
+  <div class="info-band-inner">
+    <div class="info-item"><span class="info-icon">&#128666;</span><div><div class="info-title">Fast Delivery</div><div class="info-desc">Delivery details placeholder</div></div></div>
+    <div class="info-item"><span class="info-icon">&#10003;</span><div><div class="info-title">Authentic Only</div><div class="info-desc">100% genuine products</div></div></div>
+    <div class="info-item"><span class="info-icon">&#128242;</span><div><div class="info-title">WhatsApp Orders</div><div class="info-desc">Easy ordering via chat</div></div></div>
+    <div class="info-item"><span class="info-icon">&#128274;</span><div><div class="info-title">Secure Payment</div><div class="info-desc">Payment info placeholder</div></div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header reveal">
+    <div><div class="section-label">Featured</div><h2 class="section-title">New Arrivals</h2></div>
+    <a href="collections.html" class="link-arrow">View All Fragrances</a>
+  </div>
+  <div class="product-grid"><div class="product-card reveal" data-gender="male" data-type="woody" style="">
+      <div class="product-img-wrap">
+        <a href="product.html" style="display:block;height:100%;text-decoration:none;">
+          <div class="product-img-placeholder"><span>Product Image</span></div>
+          <div class="product-badge">Bestseller</div>
+          <div class="product-overlay">
+            <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" onclick="event.stopPropagation();return true;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+          </div>
         </a>
       </div>
-    </div>
-  </section>
-
-  <!-- The Midnight Collection -->
-  <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-      <div class="max-w-xl">
-        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4">The Midnight Collection</h2>
-        <p class="font-body-lg text-body-lg text-on-surface-variant">An olfactory journey through the transition of light to darkness. Each fragrance is a masterwork of rare ingredients, crafted for the discerning few who find beauty in the shadows.</p>
-      </div>
-      <a class="font-label-lg text-label-lg uppercase tracking-widest border-b border-primary/30 pb-2 hover:border-primary transition-colors duration-500" href="collections.html">View All Fragrances</a>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-      <!-- Card 1 -->
-      <div class="group relative flex flex-col items-center">
-        <div class="relative aspect-[3/4] w-full overflow-hidden mb-8 border border-outline-variant/10 group-hover:border-outline-variant/30 transition-all duration-500">
-          <img alt="Obsidian Oud" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0c_uCKLUC2stJm4TgTvUk0_AL2wJcSwvkJPbp6T4eBpOAYrPcNN5wvA9oTrvI3ByLv7DaJ8N7BBXquErzgi_2MFJUswezPpeMUhPFnsdkT5fZW65_xjijkQ1mfNGd7jndDhZllFK0GATq7Sd7T2ZKIo9Yt1IJNsV0q1VEMB8j34_phujFdL_EhcR4oULlMrcn5VLn2bR-lnZRXdzNjBa92UqKnYOO1x5uwMSzXYTWiHFAF6zEXFlZwrFF5IyVdJ58W8Z1f8TOheiP"/>
-        </div>
-        <div class="text-center">
-          <span class="font-label-lg text-label-lg uppercase tracking-widest text-primary/60 mb-2 block">Woody · Oriental</span>
-          <h3 class="font-headline-sm text-headline-sm mb-2">Obsidian Oud</h3>
-          <p class="font-body-md text-body-md text-on-surface-variant mb-6">Agarwood, Smoked Incense, Black Amber</p>
-          <a href="product.html" class="border border-outline px-8 py-3 font-label-lg text-label-lg uppercase tracking-widest hover:bg-on-surface hover:text-background transition-all duration-300 inline-block">
-            Discover
-          </a>
+      <div class="product-info">
+        <div class="product-brand">Brand Placeholder</div>
+        <div class="product-name">Product Name</div>
+        <div class="product-notes">Note Placeholder</div>
+        <div class="product-footer">
+          <span class="product-price">Price Placeholder</span>
+          <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" style="font-size:9px;padding:7px 14px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
         </div>
       </div>
-      <!-- Card 2 -->
-      <div class="group relative flex flex-col items-center">
-        <div class="relative aspect-[3/4] w-full overflow-hidden mb-8 border border-outline-variant/10 group-hover:border-outline-variant/30 transition-all duration-500">
-          <img alt="Velvet Nocturne" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSBwnbitWEFmOGP-WmVi2bsB4a0DcDyGwxy_9Yq86a6mlGIrrjcsXwJp1UKzy3MwK5VOl_KX5ChHdG6YvjGaYug21-1viuffqICyIUns96KdMzuIbSJtIoYdXahw93QfPJx6gfkLp_OwXZZKSXMdNCZmpe-TBV8w_5jIFnSUO9GuVWkjQwgQtOXj3gaKs1bFwREOZS1mR5ZPEHlTmFrtgN13nnlGrwbD3Q4gWU8EqOZgeAioYBQfpv0f4s6AcKhUHvwo4FfXu_ie0u"/>
-        </div>
-        <div class="text-center">
-          <span class="font-label-lg text-label-lg uppercase tracking-widest text-primary/60 mb-2 block">Floral · Musky</span>
-          <h3 class="font-headline-sm text-headline-sm mb-2">Velvet Nocturne</h3>
-          <p class="font-body-md text-body-md text-on-surface-variant mb-6">Night Jasmine, White Musk, Moonflower</p>
-          <a href="product.html" class="border border-outline px-8 py-3 font-label-lg text-label-lg uppercase tracking-widest hover:bg-on-surface hover:text-background transition-all duration-300 inline-block">
-            Discover
-          </a>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="group relative flex flex-col items-center">
-        <div class="relative aspect-[3/4] w-full overflow-hidden mb-8 border border-outline-variant/10 group-hover:border-outline-variant/30 transition-all duration-500">
-          <img alt="Ethereal Mist" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgVRWg9kF4ecOu5yS6PzGcPTRS9v_98LbbzO1oFO1JFGwFcEwzY6gAmjyOKiDbawISNIiaGgkoLgG74NRjnYQiHq2J5XwTEBq2E9oXWqUtBmTOYfkzuZry6aXgNGaxriOrRzL_Xw89UwI8hmEb_J3m9UkTKH6Vvpp8rn5OIqvK3z1inqPrs7jdVi1ZZGGecECERLek8UUk4wjwOBDTtZBOn3t2HLNUWsioBSP7dGz8GsFhWc0u0jxZUV6cCv3yr5CaBn9iJUCS8yxe"/>
-        </div>
-        <div class="text-center">
-          <span class="font-label-lg text-label-lg uppercase tracking-widest text-primary/60 mb-2 block">Fresh · Ozonic</span>
-          <h3 class="font-headline-sm text-headline-sm mb-2">Ethereal Mist</h3>
-          <p class="font-body-md text-body-md text-on-surface-variant mb-6">Silver Birch, Moss, Arctic Breeze</p>
-          <a href="product.html" class="border border-outline px-8 py-3 font-label-lg text-label-lg uppercase tracking-widest hover:bg-on-surface hover:text-background transition-all duration-300 inline-block">
-            Discover
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Craft Editorial -->
-  <section class="bg-surface-container-low py-section-gap overflow-hidden">
-    <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-        <div class="relative">
-          <div class="aspect-[4/5] w-full border border-outline-variant/20 overflow-hidden">
-            <img alt="The perfumer's craft" class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2000ms]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMW5TC7f7aCyq29fP0yYbyhGOKN6qe52205L41IaJ-0tzm5JWZmtnxLVS9f7vQm3MrpXfllQVRvrN5bEC8rIkX_ncVMz9N2jhs4mCRYLkdpr9o0MBEiQRUKfPqBlwww7nwxlJvNjXgIWzFZ4UqToUA_oLJGFf4tbaMihFPQiKqYbTbIQD8Yr5VBqmoE5_snRrCJ4apoFfSDBd3rvMBhV1WxGnapXOHyotImtJoGDHD-eHUdHGqZtK5CeJEGrWIBaTHOIsk6rVhbYl9"/>
+    </div><div class="product-card reveal" data-gender="female" data-type="floral" style="transition-delay:100ms">
+      <div class="product-img-wrap">
+        <a href="product.html" style="display:block;height:100%;text-decoration:none;">
+          <div class="product-img-placeholder"><span>Product Image</span></div>
+          
+          <div class="product-overlay">
+            <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" onclick="event.stopPropagation();return true;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
           </div>
-          <div class="absolute -bottom-10 -right-10 hidden md:block bg-background p-10 border border-outline-variant/20">
-            <p class="font-display-lg text-headline-lg text-primary italic leading-none">50+</p>
-            <p class="font-label-lg text-label-lg uppercase tracking-widest mt-2">Rare Ingredients</p>
-          </div>
-        </div>
-        <div class="space-y-10">
-          <span class="font-label-lg text-label-lg uppercase tracking-[0.5em] text-primary">Our Catalog</span>
-          <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg leading-tight">Every Fragrance, a Story</h2>
-          <div class="space-y-6 text-on-surface-variant font-body-lg">
-            <p>Moonlight Aroma is an online catalog dedicated to the world's most evocative nocturnal fragrances. We source, curate, and present rare perfumes crafted by master perfumers who work with ethically obtained botanicals, resins, and absolutes from across the globe.</p>
-            <p>Each listing in our catalog goes beyond the bottle — we provide full scent profiles, ingredient sourcing details, and wear guides so you can make a truly informed choice before your first spray.</p>
-          </div>
-          <div class="pt-8">
-            <a href="collections.html" class="bg-transparent border border-primary text-primary px-10 py-4 font-label-lg text-label-lg uppercase tracking-widest hover:bg-primary hover:text-background transition-all duration-500 inline-block">
-              Browse the Catalog
-            </a>
-          </div>
+        </a>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Brand Placeholder</div>
+        <div class="product-name">Product Name</div>
+        <div class="product-notes">Note Placeholder</div>
+        <div class="product-footer">
+          <span class="product-price">Price Placeholder</span>
+          <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" style="font-size:9px;padding:7px 14px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Newsletter Section -->
-  <section class="py-section-gap px-margin-mobile md:px-margin-desktop text-center max-w-3xl mx-auto">
-    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8">Join the Nocturnal Circle</h2>
-    <p class="font-body-lg text-on-surface-variant mb-12">Receive early access to new catalog additions, limited edition releases, and exclusive fragrance guides delivered straight to your inbox.</p>
-    <form class="flex flex-col md:flex-row gap-4 items-end">
-      <div class="w-full relative">
-        <input class="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 focus:ring-0 focus:border-primary placeholder:text-outline text-body-lg transition-all duration-300" placeholder="Your Email Address" type="email"/>
+    </div><div class="product-card reveal" data-gender="unisex" data-type="oriental" style="transition-delay:200ms">
+      <div class="product-img-wrap">
+        <a href="product.html" style="display:block;height:100%;text-decoration:none;">
+          <div class="product-img-placeholder"><span>Product Image</span></div>
+          <div class="product-badge">New Arrival</div>
+          <div class="product-overlay">
+            <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" onclick="event.stopPropagation();return true;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+          </div>
+        </a>
       </div>
-      <button class="whitespace-nowrap bg-primary text-on-primary-fixed px-12 py-4 font-label-lg text-label-lg uppercase tracking-widest hover:brightness-110 transition-all" type="submit">
-        Subscribe
-      </button>
-    </form>
-    <p class="font-label-lg text-xs text-outline mt-6 uppercase tracking-widest">Discretion Guaranteed · Opt-out anytime</p>
-  </section>
-</main>
+      <div class="product-info">
+        <div class="product-brand">Brand Placeholder</div>
+        <div class="product-name">Product Name</div>
+        <div class="product-notes">Note Placeholder</div>
+        <div class="product-footer">
+          <span class="product-price">Price Placeholder</span>
+          <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" style="font-size:9px;padding:7px 14px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+        </div>
+      </div>
+    </div></div>
+</div>
 
-<!-- Footer -->
-<footer class="bg-surface-container-lowest border-t border-outline-variant/20 mt-20">
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-6 md:px-margin-desktop py-section-gap w-full max-w-container-max mx-auto">
-    <div class="space-y-6">
-      <span class="font-display-lg text-headline-sm text-primary italic">Moonlight Aroma</span>
-      <p class="font-body-md text-on-surface-variant max-w-xs">An online catalog of the world's finest nocturnal fragrances, curated for the discerning collector.</p>
-      <div class="flex gap-6 text-on-surface-variant">
-        <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
-        <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">camera</span></a>
-        <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+<div style="max-width:1360px;margin:0 auto;padding:0 48px;"><div style="height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);"></div></div>
+
+<div style="max-width:1360px;margin:0 auto;padding:80px 48px 40px;" class="reveal">
+  <div class="section-label">Shop by Gender</div>
+  <h2 style="font-size:clamp(32px,4vw,52px);margin-bottom:0;">Browse Collections</h2>
+</div>
+<div class="gender-split">
+  <a href="collections.html?gender=male" class="gender-tile reveal">
+    <div class="gender-tile-bg"></div>
+    <div class="gender-tile-overlay"></div>
+    <div class="gender-tile-content">
+      <span class="gender-tile-label">For Him</span>
+      <div class="gender-tile-title">Men's<br/>Fragrances</div>
+      <span class="gender-tile-cta">Shop Now</span>
+    </div>
+  </a>
+  <a href="collections.html?gender=female" class="gender-tile reveal reveal-d1">
+    <div class="gender-tile-bg" style="background:linear-gradient(160deg,#201818,#2a1e1e);"></div>
+    <div class="gender-tile-overlay"></div>
+    <div class="gender-tile-content">
+      <span class="gender-tile-label">For Her</span>
+      <div class="gender-tile-title">Women's<br/>Fragrances</div>
+      <span class="gender-tile-cta">Shop Now</span>
+    </div>
+  </a>
+</div>
+
+<div class="section">
+  <div class="section-header reveal">
+    <div><div class="section-label">Top Sellers</div><h2 class="section-title">Bestsellers</h2></div>
+    <a href="collections.html" class="link-arrow">View All</a>
+  </div>
+  <div class="product-grid"><div class="product-card reveal" data-gender="female" data-type="" style="">
+      <div class="product-img-wrap">
+        <a href="product.html" style="display:block;height:100%;text-decoration:none;">
+          <div class="product-img-placeholder"><span>Product Image</span></div>
+          <div class="product-badge">Bestseller</div>
+          <div class="product-overlay">
+            <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" onclick="event.stopPropagation();return true;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+          </div>
+        </a>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Brand Placeholder</div>
+        <div class="product-name">Product Name</div>
+        <div class="product-notes">Note Placeholder</div>
+        <div class="product-footer">
+          <span class="product-price">Price Placeholder</span>
+          <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" style="font-size:9px;padding:7px 14px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+        </div>
+      </div>
+    </div><div class="product-card reveal" data-gender="male" data-type="" style="transition-delay:100ms">
+      <div class="product-img-wrap">
+        <a href="product.html" style="display:block;height:100%;text-decoration:none;">
+          <div class="product-img-placeholder"><span>Product Image</span></div>
+          
+          <div class="product-overlay">
+            <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" onclick="event.stopPropagation();return true;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+          </div>
+        </a>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Brand Placeholder</div>
+        <div class="product-name">Product Name</div>
+        <div class="product-notes">Note Placeholder</div>
+        <div class="product-footer">
+          <span class="product-price">Price Placeholder</span>
+          <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" style="font-size:9px;padding:7px 14px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+        </div>
+      </div>
+    </div><div class="product-card reveal" data-gender="unisex" data-type="" style="transition-delay:200ms">
+      <div class="product-img-wrap">
+        <a href="product.html" style="display:block;height:100%;text-decoration:none;">
+          <div class="product-img-placeholder"><span>Product Image</span></div>
+          <div class="product-badge">Limited</div>
+          <div class="product-overlay">
+            <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" onclick="event.stopPropagation();return true;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+          </div>
+        </a>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Brand Placeholder</div>
+        <div class="product-name">Product Name</div>
+        <div class="product-notes">Note Placeholder</div>
+        <div class="product-footer">
+          <span class="product-price">Price Placeholder</span>
+          <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20Product%20Name." class="wa-btn" style="font-size:9px;padding:7px 14px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire</a>
+        </div>
+      </div>
+    </div></div>
+</div>
+
+<div class="cta-band reveal">
+  <h2>Not Sure What to Order?</h2>
+  <p>Send us a message on WhatsApp and we will help you find the perfect fragrance.</p>
+  <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20the%20right%20fragrance%20for%20me." class="wa-btn" style="font-size:11px;padding:14px 36px;display:inline-flex;" target="_blank">
+    <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Chat on WhatsApp
+  </a>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCADIAOsDASIAAhEBAxEB/8QAHAABAAMBAQEBAQAAAAAAAAAAAAQGBwUCAwEI/8QAPhAAAQQBAwEFBwMCBAMJAAAAAQACAwQFBhESIQcTMUGyFCIyNTZ0glFhcRWBFiNSkSQzoSU0QkNiY3Jzg//EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD+v8H8lo/bR+kKYoeD+S0fto/SFMQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBZvrP6lt/h6GrSFm+s/qW3+HoagvmD+S0fto/SFMUPB/JaP20fpCmICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAs31n9S2/w9DVpCzfWf1Lb/D0NQXzB/JaP20fpCmKHg/ktH7aP0hTEBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAWb6z+pbf4ehq0hZvrP6lt/h6GoL5g/ktH7aP0hTFDwfyWj9tH6QpiAiIgIiICIiAiIgIi8WJoa9eSxYlZDDEwvkke4NaxoG5JJ6AAeaDxft1KFKa9etQ1asDDJNNNIGMjaBuXOcegAHmVTI9Wak1KN9EYCNuPd8GZzRfBBIP9UMAHeyj93d00g7tc4KHgKMnaNdg1Xnonf4ajeJcDipW7NnAO7bthp+JzvijYejG7OI5n3LDrjU0mDbTx2LptyWoMm50eNomTg1xaN3yyO68IWAgudsfFrQC5zQQ49/Caor05cjqHtZtYqGMc5X4/HUateMefWzHOQP5eVUmangA5af7XtXaiLR7r4NLR5Wsf5fSpt3H/6D+VdMR2fUprkWZ1nYGqc413NktuP/AIWo79K1cksiA8A48pD5vKuqDEpu3SHSz2jXVVzKBcGuyUOKu49zN/N9W2wO4/vFJKevw+a13TuaxGosNWzOCyNbI4+y3nDYryB7Hj+R5jwI8QehXMr6x0zkK7x7RP3T67ZuNihPEJYnuDGloewcwS4D3d/iH6qBprE4zA2rJ0VouLHQ5Gfvrsjv+CgLmksLhFsXcyBv0jaHDYlyC5IiICIiAiIgIiICIiAs31n9S2/w9DVpCzfWf1Lb/D0NQXzB/JaP20fpCmKHg/ktH7aP0hTEBERAREQEREBERAVF7VQ7NWsDoNhd3WdsvkyW3nj64D5m/wASOdDCf/TM5XpUuFntHblbkk6+waagEO5+H2izL3m38+zR/wCwQXNrWtaGtAa0DYADoAqN2aM/reYz2urAL33bcmOxvL/yqVaR0Y4/p3krZZSfMOj3+EK72HOZBI9g3c1pIH77KodhsTIuxfRQj688DSkc7zc58LHOcf3JJP8AdBbblmvTqyWrdiKvXiaXSSyvDWMA8SSegCpL9ZX8rgpreEdgajbELjUnuZJzXx7j3HyRCEgHqHFhdv5HYqJqiHIansl8WKF+u2+6pjmWGj2avJA495alHiH82PZE7i7gWtcOr9lasdg7EOOrtkyl+C73bfaHw2nysMmw5cRPz2bvvsP0QZbDg8ZaylSxHmMDlTWx8eLmZNmWF5ZBIJITvHVGz2SBx69PecCP07Wn2Y4Z7+hnG6Os2O6D4oXMj5SsdM+RwbKyJo3jI5d33PXo4vJLi3qdnuHue0Zwv1Jl5Gf1Oxuwiu0f86Tru2IH/qpvaBj9P4rSd/L5ajbyzarRJDDPekP+fuGxFjnu4wu5ubtL7oj+IloBIC5oqx2d5x2XxHCaeSxJFHFLDPKzhJZrSs5wyub5OI5Md4AujeQACArOgIiICIiAiIgIiICzfWf1Lb/D0NWkLN9Z/Utv8PQ1BfMH8lo/bR+kKYoeD+S0fto/SFMQEREBERAREQEREBUu2f6f21UZXjaPM4KWuHf+5Vma9rf5LbEpH/wKuiqvadichkMHXyWEiEubwltmSx8fLj3z2BzZId/LvYnyx7noC8HyQWpUrsccKml59Lv92xpu7NizH/phaedY/wAGu+E/3I8lZdNZnH6hwNPN4ubvadyISRkjZw/VrgerXA7gtPUEEHqFVdawXdM6kZr3FVZrdV0DaufpwML5JK7STHYjaOrpIi527R1cxzgN3NYEHN7PKjm9oFiZ+au862JNN2Pe3jFI+O5M10w69SC0O8NwJwSSHNAtWgoNVQUMg3VtmrPYdkrDqZgG3GqX/wCWHfv4kDqWtLWkuILjXdS4iXLz47W2ipqeUjkcyy+OKxwNlvENEsEzXAB5a1rXNfvHI1rQ7YtBXRkzWetw7OiuYvk3ZzYMRLPIw/q17tm7/wAsI/lBK7P9jLnCDuBlLI/v30i/e0HTVzUseJghypp0q19s2Rgczky7W4ObJA4eYcHcSDu3Zzum4aRxtOQS6eoy16FzUdl8srppJL+H7zm8gAud3bWEnoOu+5PU7kkqLra7n8rp+alJUqV6bB3lzIZDvqdSOIA8zPGXBz49tyWB+ztgHENJKDv6NylbPaiyWbx8TxRlx9KKOR7QC4h1iQDbyBjmieP2kHgrYqL2Iagx+pdHTZTD1bgxhvTR1b9oBr8oG7B1oNAHBrn82tb02axuwaNmi9ICIiAiIgIiICIiAs31n9S2/wAPQ1aQs31n9S2/w9DUF8wfyWj9tH6Qpih4P5LR+2j9IUxAREQEREBERAREQEREFEy2Ny2jszb1FpmjJkcTdkM+Xw0I/wA0Sn4rVYeBefF8XTntybs/cSWjTWfw+pMY3I4S/FcrlxY4s3Do3j4mPadnMePAtcAQfEBdNVnPaHwWUypzUItYnNEAHJYyc153geAk292YAeDZWvA8gggXNEWsZkbGV0LmRgLFmQzWqEsHtGOsyH4nuh5NMbz5viczc9XB6DO9odJvG/oOnkCNh3mJzTDz/fhYZFx/Xbkf5PivcuK7RqO7cbq3C5OIfC3LYhwmP8ywSMZ/tEF8/Zu1ay8sdl9G42P/AFsxtm0/+wM0YH/X+EH5PqHtAsQvdS0LRxrQ0l02ZzbGNjH+otgZLvsOu3Jv8jxWb3NN5XtitilldQPzOmGyH2y5VgNXGPAPWKnHu51h/TY2JHOYzqYwH9WaS3s9gyb2y60zmS1UWkOFS1whoNIO/wD3aIBsg/8AtMhH6q6RsZHG2ONjWMaA1rWjYADwACD44yjTxmOrY7H1oqtOrE2GCGNvFkbGjZrQPIAABSERAREQEREBERAREQFm+s/qW3+HoatIWb6z+pbf4ehqC+YP5LR+2j9IUxQ8H8lo/bR+kKYgLkay1FjdJ6au6izDpm4+k0PsOijL3MYXBpdxHUgb7nbrsCuuuLranPfwPs0FL24m3VfJBuwc42WI3yD3yAfca7oT18EDJaow9HL4HFSWDJaz75G48RN5NkEcRle7l4BoYN99+u423UnI5mtUvxY5kc1u/LE6ZlWAAv7sEAvJcQ1o3OwLiNz0G5CzbT3Z/qHA5LR0cszMpVwWVnZBM14Dq+MFW1FWY/kQXSA2GtcW+IYD5dbflMHaj1ndzcUNi3UymKgx1mOtY7ieAwyTPY9juTejvaHhxDg4FrNt9zxDvYjKU8pHOar3d5WmMFmJ7S18MgAJY4HwOzmkeRDgQSCCefNqrGx17V1kdqbHU3yMtXoo+UMToyRJ58nBpBDi1rgCDufddt89LYq5XzWczt5gglys0RjrBwd3MUUYY3mR0LyeRO24A4jc8dzxsDhczgNMR4OtQkuWaME9SjYNsNqyxyO3Y+dnLcuADeR4OPxcfiIQWXUufx2n9OWNQX3yvoV2Nke6vGZXFriAC1rdy7xHQbk+W6/aWex9+bGDHudcr5Oo65WtQlpidEOHvb779e8ZtsD4rkyYCxh+zvEaexjZcjJiW4+Fm7msfMyvJFu48iBuWsJ8VyNGaPyuldfWoqHcO0c+tYnoxc9pMfYmlidLA1vnC4sMjdtuJLm7bcUFuhzlOXVVnTbWTe21qUV2Qlo4d3I+RjNjv47xP6beX7hfmqc7U05iDlL0c8kAnhg2haHO5yytiZ0JHi97R+2+64E9XL0O1PJZ+LCW79C1hKdNj68sAcJYprL3AiSRp22mZsf5XvtCx2Z1DoCCtXxojyUlvHWpapnae67q1DNK3n0DuLWOG48SB+qDv57M0sLBA+2ZHy2ZhXqwRM5y2JSC4MY3zOzXEk7ABpcSACR+4rLRX7Nmo6rbqW6zWOmhsRbbB+/EhzSWPHuuHuuOxBB2XG1pg71zO6c1FjWNsWMJZme+q9/Dv4pYXRvDSegkG7S3fYHYtJby5CRgv8Rzary1zId9Wwr61ZlCnMYS9kwMvfv3j3PEjudgXnqH9ANkHn/GWJ/oupMsWWxX05NPFeBjHLeGMSPLBv7w4uBH6roy5Yf0ynerY+7c9rDTFDC1vMBzC/dxc4NaAB4k+Ow6khZ9Z0TlrOk+0uq+tYZdzlq8/GxtvljJWyVWRRlwa/iN3NPxDw8Vo2Bhmr4OhXsM4TRVo2SN3B4uDQCNx08UHO0hqmpqehXyFCjkIqdqEzVp542hsrQdjtxcS07nwcGk+W+x27yqfZBh8jgOzXCYbLVxXvVK5jmjEjXhp5OPi0kHoQrW4kNJAJIHgPNBzI8/ipNUS6abZ/7TiqC26LgdjGXcTs7wJBLdxvuA9hPRw3+epNQV8HNi4Jalu1PlLZqVY67WkukEUkpBLnNAHCKQ7k/+HbxIVRy2C1W+1pzVFSvXflamTdNcqcWtlNSwCyaEy95wdwb3RHhyNdnguz2hYjL5XJaUlxIMbsflpLM1j3D3DXUbUDX8XEc9nzsPEeQKDs6dz2Nz0Vp1CSUS05zWtwTROilglDWu4Oa4Aj3XNcD4EOBBIIKjTapxzIbduOK3Yx9J8kdq7DFyiidGSJB48n8SCHFjXAEEE7tcBwuyjC6kxEuak1NBXdeuzRy2b0coeb07WmMygDbu4+6ZXa2PiC0h/V+/I+sBh8zp7ANw9fHyXrFIWIaE/tgZWljlkLmOnZy3LmjiHHg8/EW/EQgsOptRYzT2lrepb0j5MbUg9okkrt7wmPp7zQPiGx36eI8N18chq3B0rWn6zrffSahlMeN7kcxMBE6Uv38A0Mbvv+4/VcyfTc+J7KcfpTHskykmNpU6bNy1jp2wmNpceRAG7WE7E/7qp4fs7zuEu6ThEkeSpYHPSOpOa/Z1TF+z22RMdzIJe11hjDx6FkTPMdQ03UOWpYHCXMxkXvZUqRGWQsYXuIHk1o6ucTsA0dSSAFKpWa92nDcqTMmrzxtlikYd2vY4bhwPmCCCuVn6+Uu5PH16bYoqkRdYnnmj7xjnN2DIywPaTvyL9+oBjb5lcvspxWZwGnp9PZaCNtfHXZocXLG4cZKRcXQt48iW8Gnu9j5MafNBbkREBZvrP6lt/h6GrSFm+s/qW3+HoagvmD+S0fto/SFMUPB/JaP20fpCmICIiAiIgIiICpvaJ2i4fQ12jWy1HIzC5BNYEtZsTmxsidE1+4c9rid5mbNYHE9dgT0VyXDzGlcRltU4XUl2OV9/CiYUiJCGN70ND92+BPut2Plt0QRe0bWuM0LiKmUy1ezNBavRUW9y6JvB8m/Fz3SvY1rNx1JPTceW6+uX1bRxfZ3PrizUuOx9fG/1KWGLu3zCIR94dtn8CQ3fwcQduhPRfXWelsXqyhVp5R1pjalyK7XfWndE+OaMkscC39CfA9F4yGksTf0NY0bbddlxdio6nNytPMz4nDZwMm/LqCR/B28EHvRGp8fq7BnL42OxHALE1YiUNPvxPLHcXMc5j27tOzmuI/fcELk9mHaJiO0GvdnxFK7WZTcGSCzJXLuXORhaWxSvLSDGejw0kFpG4K62jdK4jSNCfH4OOeCnNO6x3D53SMje/q/gHE8A527i0bDdxIA3TROlcPo/Bsw+FikbXY57g6V/eSHk90hBcepHJ7iN/DcoOXje0HGZDNSYqDF5USx5+XAukcyIM7+Os6y5/wDzN+77tvQ7b7kDZfXVuv8AT+ldVYLT+cfNUfm2WHVbjw0VmmBoc9r3F27SQ4bdNj4b7r7V9D6er6vl1TDBaZelmNl8YuS+z+0GHuTP3PLgJDF7hdtvt+/VeNbaB0xrOzXl1JSffZXj7uKF0pEY3lilJ2G3Uuhj6/oCPAkEPt2e6vx+uNHVdU4ipehp2nStiitRtjmJjkdGd2hxA3cw7bn+dlB7LO0LEdomIkymFqXIKzAzc2ZIHO3dv7pEUryxwABLXcTs5p26rraQ01jdK6ebgsQbDKbJJZGd7KZHtdLI6R55Hr8T3H+6h6A0PhtEUXUcJLkTWMbI2RWbb5mxtZy2DQ47D4jufE7DfwCCHprtGwme1zktH1a1+LI44ziUytjLD3Lo2uPuvc5oPesLeYbyG+3wnb9zvaFjcPrynoyxicvJkr8bJaboo4zFYaX8XlhMgJ7oe+8bbhvXruN/WF7ONL4fWNnV2PgtxZi3YnnsT+1P/wA3vg0Ojc3fZzAWNc1pGzSNxtud+vktN4zIaqxGpbInN/ERzx1C2UhgbMGiTdvg7cNb4+GyDsIiICIiAiIgIiICzfWf1Lb/AA9DVpCzfWf1Lb/D0NQXzB/JaP20fpCmKHg/ktH7aP0hTEBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAWb6z+pbf4ehq0hZvrP6lt/h6GoL5g/ktH7aP0hTFDwfyWj9tH6QpiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgLN9Z/Utv8PQ1aQs31n9S2/wAPQ1BfMH8lo/bR+kKYoeD+S0fto/SFMQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBZvrP6lt/h6GrSFm+s/qW3+HoagvmD+S0fto/SFMREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAWb6z+pbf4ehqIg//Z" class="footer-logo" alt="Moonlight Aroma Perfumery"/>
+      <p class="footer-desc">Curated luxury fragrances. Contact us on WhatsApp to check availability and place your order.</p>
+      <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20your%20fragrances." class="wa-btn" style="margin-top:24px;" target="_blank"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp Us</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Shop</div>
+      <div class="footer-links">
+        <a href="collections.html">All Fragrances</a>
+        <a href="collections.html?gender=male">Men</a>
+        <a href="collections.html?gender=female">Women</a>
+        <a href="collections.html">Unisex</a>
       </div>
     </div>
-    <div class="flex flex-col gap-4">
-      <h4 class="font-label-lg text-label-lg uppercase tracking-widest text-primary mb-4">Catalog</h4>
-      <a class="text-on-surface-variant hover:text-primary hover:underline underline-offset-8 transition-all font-body-md" href="collections.html">All Fragrances</a>
-      <a class="text-on-surface-variant hover:text-primary hover:underline underline-offset-8 transition-all font-body-md" href="collections.html">New Arrivals</a>
-      <a class="text-on-surface-variant hover:text-primary hover:underline underline-offset-8 transition-all font-body-md" href="collections.html">Discovery Sets</a>
-      <a class="text-on-surface-variant hover:text-primary hover:underline underline-offset-8 transition-all font-body-md" href="collections.html">Bestsellers</a>
+    <div>
+      <div class="footer-col-title">Information</div>
+      <div class="footer-links">
+        <a href="scent-stories.html">Stories</a>
+        <a href="#">About Us</a>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Returns</a>
+      </div>
     </div>
-    <div class="flex flex-col gap-4">
-      <h4 class="font-label-lg text-label-lg uppercase tracking-widest text-primary mb-4">Information</h4>
-      <a class="text-on-surface-variant hover:text-primary hover:underline underline-offset-8 transition-all font-body-md" href="scent-stories.html">Scent Stories</a>
-      <a class="text-on-surface-variant hover:text-primary hover:underline underline-offset-8 transition-all font-body-md" href="#">Sustainability</a>
-      <a class="text-on-surface-variant hover:text-primary hover:underline underline-offset-8 transition-all font-body-md" href="#">Shipping & Returns</a>
-      <a class="text-on-surface-variant hover:text-primary hover:underline underline-offset-8 transition-all font-body-md" href="#">Privacy Policy</a>
-    </div>
-    <div class="flex flex-col gap-4">
-      <h4 class="font-label-lg text-label-lg uppercase tracking-widest text-primary mb-4">Contact</h4>
-      <p class="font-body-md text-on-surface-variant">hello@moonlightaroma.com</p>
-      <p class="font-body-md text-on-surface-variant">Available Mon – Fri, 9am – 6pm</p>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-links">
+        <a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20your%20fragrances." target="_blank">WhatsApp: +260 XX XXX XXXX</a>
+        <a href="#">Email Placeholder</a>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+      </div>
     </div>
   </div>
-  <div class="border-t border-outline-variant/10 py-10 px-margin-desktop w-full max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-outline font-label-lg text-xs uppercase tracking-widest">
-    <p>© 2024 Moonlight Aroma. All Rights Reserved.</p>
-    <div class="flex gap-8">
-      <a class="hover:text-primary transition-colors" href="#">Terms</a>
-      <a class="hover:text-primary transition-colors" href="#">Accessibility</a>
-      <a class="hover:text-primary transition-colors" href="#">Cookies</a>
-    </div>
+  <div class="footer-bottom">
+    <span>&#169; 2025 Moonlight Aroma Perfumery. All rights reserved.</span>
+    <span>Lusaka, Zambia</span>
   </div>
 </footer>
-
+<a href="https://wa.me/260XXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20the%20availability%20of%20a%20fragrance." class="wa-float" title="Chat on WhatsApp" target="_blank">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const subtitle = document.getElementById('hero-subtitle');
-    const title = document.getElementById('hero-title');
-    const sub = document.getElementById('hero-sub');
-    const cta = document.getElementById('hero-cta');
-    setTimeout(() => { subtitle.classList.remove('opacity-0','translate-y-4'); }, 500);
-    setTimeout(() => { title.classList.remove('opacity-0','translate-y-4'); }, 800);
-    setTimeout(() => { sub.classList.remove('opacity-0','translate-y-4'); }, 1000);
-    setTimeout(() => { cta.classList.remove('opacity-0','translate-y-4'); }, 1100);
-  });
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.06});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
